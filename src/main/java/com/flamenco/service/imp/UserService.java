@@ -1,5 +1,7 @@
 package com.flamenco.service.imp;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.apache.commons.logging.Log;
@@ -13,8 +15,9 @@ import com.flamenco.service.IUserService;
 
 @Service("userService")
 @Repository
-public class UserService implements IUserService {
-    private static final Log log = LogFactory.getLog(UserService.class);
+public class UserService extends BaseService implements IUserService {
+//    private static final Log log = LogFactory.getLog(UserService.class);
+    
     private UserInfoDao userDao;
 
     public UserInfoDao getUserDao() {
@@ -25,12 +28,14 @@ public class UserService implements IUserService {
     public void setUserDao(UserInfoDao userDao) {
         this.userDao = userDao;
     }
-    @Override
-    public int addUser(String userName) throws Exception {
-        log.info("----------------addUser---------------");
-//        UserInfo userInfo = new UserInfo();
-//        userInfo.setUserName(userName);
-//        userDao.getSession().save(userInfo);
-        return 1;
-    }
+
+	@Override
+	public Object get(Object object) {
+		return null;
+	}
+
+	@Override
+	public List getAll() {
+		return null;
+	}
 }

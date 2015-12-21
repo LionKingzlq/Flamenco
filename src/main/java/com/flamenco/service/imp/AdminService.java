@@ -11,33 +11,38 @@ import com.flamenco.dao.AdminInfoDao;
 import com.flamenco.model.Admin;
 import com.flamenco.service.IAdminService;
 
-@Service(value="adminService")
+@Service(value = "adminService")
 @Repository
-public class AdminService implements IAdminService{
+public class AdminService extends BaseService implements IAdminService {
 
 	private AdminInfoDao adminDao;
-	
-    public AdminInfoDao getUserDao() {
-        return adminDao;
-    }
 
-    @Resource
-    public void setUserDao(AdminInfoDao adminDao) {
-        this.adminDao = adminDao;
-    }
-    
-    @Transactional(readOnly = true, rollbackFor = Throwable.class)
-	@Override
-	public List<Admin> getAllAdmin() {
-		
-		Session session = adminDao.getSession();
-		session.beginTransaction();
-		List<Admin> list = session.createSQLQuery("select * from admin").addEntity(Admin.class).list();
-		session.getTransaction().commit();
-		for(int i=0;i<list.size();i++){
-			System.out.println(list.get(i).getAdmin());
-		}
-		return null;
+	public AdminInfoDao getUserDao() {
+		return adminDao;
 	}
 
+	@Resource
+	public void setUserDao(AdminInfoDao adminDao) {
+		this.adminDao = adminDao;
+	}
+
+	@Transactional(readOnly = true, rollbackFor = Throwable.class)
+	@Override
+	public List<Admin> getAllAdmin() {
+		return adminDao.getAllAdmin();
+	}
+
+	@Override
+	public boolean checkAdmin(Admin admin) {
+		return adminDao.checkAdmin(admin);
+	}
+	
+	@Override
+	public Object get(Object object) {
+		return null;
+	}
+	@Override
+	public List getAll() {
+		return null;
+	}
 }
