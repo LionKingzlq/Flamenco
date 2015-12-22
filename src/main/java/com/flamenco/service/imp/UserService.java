@@ -4,38 +4,37 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.hibernate.Session;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
 import com.flamenco.dao.UserInfoDao;
+import com.flamenco.model.User;
 import com.flamenco.service.IUserService;
 
 
-@Service("userService")
+@Service(value="userService")
 @Repository
 public class UserService extends BaseService implements IUserService {
-//    private static final Log log = LogFactory.getLog(UserService.class);
     
-    private UserInfoDao userDao;
+    private UserInfoDao userInfoDao;
 
-    public UserInfoDao getUserDao() {
-        return userDao;
+    public UserInfoDao getuserInfoDao() {
+        return userInfoDao;
     }
 
-    @Resource
-    public void setUserDao(UserInfoDao userDao) {
-        this.userDao = userDao;
+    @Resource(name="userInfoDao")
+    public void setuserInfoDao(UserInfoDao userInfoDao) {
+        this.userInfoDao = userInfoDao;
     }
 
 	@Override
 	public Object get(Object object) {
-		return null;
+		return userInfoDao.get((User)object);
 	}
 
 	@Override
 	public List getAll() {
-		return null;
+		return userInfoDao.getAll();
 	}
 }

@@ -1,18 +1,15 @@
 package com.flamenco.dao;
 
-import java.math.BigInteger;
 import java.util.List;
 
-import org.hibernate.Hibernate;
 import org.hibernate.Query;
 import org.hibernate.Session;
-import org.springframework.beans.factory.Aware;
 import org.springframework.stereotype.Repository;
 
 import com.flamenco.model.Admin;
 
-@Repository
-public class AdminInfoDao extends BaseDao {
+@Repository(value="adminDao")
+public class AdminDao extends BaseDao {
 
 	@SuppressWarnings("unchecked")
 	public List<Admin> getAllAdmin() {

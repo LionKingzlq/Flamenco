@@ -43,6 +43,10 @@
 				<beans:bean
 					class="org.springframework.http.converter.StringHttpMessageConverter">
 				</beans:bean>
+				<beans:bean 
+					class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter">
+					
+				</beans:bean>  
 			</beans:list>
 		</beans:property>
 	</beans:bean>

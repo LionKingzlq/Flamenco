@@ -7,31 +7,25 @@ import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.flamenco.dao.AdminInfoDao;
+import com.flamenco.dao.AdminDao;
 import com.flamenco.model.Admin;
 import com.flamenco.service.IAdminService;
 
 @Service(value = "adminService")
-@Repository
+@Repository(value="adminService")
 public class AdminService extends BaseService implements IAdminService {
 
-	private AdminInfoDao adminDao;
+	private AdminDao adminDao;
 
-	public AdminInfoDao getUserDao() {
+	public AdminDao getUserDao() {
 		return adminDao;
 	}
 
 	@Resource
-	public void setUserDao(AdminInfoDao adminDao) {
+	public void setUserDao(AdminDao adminDao) {
 		this.adminDao = adminDao;
 	}
-
-	@Transactional(readOnly = true, rollbackFor = Throwable.class)
-	@Override
-	public List<Admin> getAllAdmin() {
-		return adminDao.getAllAdmin();
-	}
-
+	
 	@Override
 	public boolean checkAdmin(Admin admin) {
 		return adminDao.checkAdmin(admin);
@@ -43,6 +37,6 @@ public class AdminService extends BaseService implements IAdminService {
 	}
 	@Override
 	public List getAll() {
-		return null;
+		return adminDao.getAllAdmin();
 	}
 }

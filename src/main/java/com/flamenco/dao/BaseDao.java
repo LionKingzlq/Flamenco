@@ -10,7 +10,9 @@ import org.springframework.dao.DataAccessResourceFailureException;
 import org.springframework.dao.support.DaoSupport;
 import org.springframework.orm.hibernate3.HibernateTemplate;
 import org.springframework.orm.hibernate3.SessionFactoryUtils;
+import org.springframework.stereotype.Repository;
 
+@Repository(value="baseDao")
 public class BaseDao extends DaoSupport {
 
 	private SessionFactory sessionFactory;
