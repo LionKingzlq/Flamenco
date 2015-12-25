@@ -10,11 +10,11 @@ import org.springframework.stereotype.Service;
 
 import com.flamenco.dao.ResGroupDao;
 import com.flamenco.model.ResGroup;
-import com.flamenco.service.IResGroup;
+import com.flamenco.service.IResGroupService;
 
 @Service(value="resGroupService")
 @Repository(value="resGroupService")
-public class ResGroupService extends BaseService implements IResGroup{
+public class ResGroupService extends BaseService implements IResGroupService{
 
 	ResGroupDao resGroupDao;
 	public ResGroupDao getResGroupDao() {

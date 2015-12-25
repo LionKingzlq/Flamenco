@@ -9,7 +9,6 @@ import java.util.Map;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletResponse;
 
-import org.codehaus.jackson.map.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -17,18 +16,14 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.view.json.MappingJacksonJsonView;
 
-import com.flamenco.dao.UserInfoDao;
 import com.flamenco.model.Admin;
+import com.flamenco.model.Set;
 import com.flamenco.model.User;
 import com.flamenco.service.IAdminService;
-import com.flamenco.service.imp.ResGroupService;
-import com.flamenco.service.imp.UserService;
-
-import net.sf.json.JSONArray;
-import net.sf.json.JSONObject;
+import com.flamenco.service.IResGroupService;
+import com.flamenco.service.ISetService;
+import com.flamenco.service.IUserService;
 
 /**
  * Handles requests for the application home page.
@@ -42,10 +37,10 @@ public class AdminController {
 	private IAdminService adminService;
 
 	@Resource(name="resGroupService")
-	private ResGroupService resGroupService;
+	private IResGroupService resGroupService;
 	
 	@Resource
-	private UserService userService;
+	private IUserService userService;
 	
 	/**
 	 * Simply selects the home view to render by returning its name.
@@ -91,17 +86,14 @@ public class AdminController {
 		}
 		return "404";
 	}
-//	@RequestMapping("/createData.do") 
-//	public void createData(HttpServletResponse response) { 
-//	   
-//	    JSONObject json = new JSONObject(); 
-//	    if (createDataServiceImpl.makeData() == false) { 
-//	        json.element("isSuccess", true); 
-//	    } else { 
-//	        json.element("isSuccess", false); 
-//	        json.element("errorInfo", "生成数据失败,请联系客服人员！"); 
-//	    } 
-//	       
-//	    writeJSONStringToResponse(response, json.toString()); 
-//	}
+	
+	@Resource(name="setService")
+	private ISetService settingService;
+	
+	@RequestMapping("/redis") 
+	public void createData(HttpServletResponse response) { 	    
+	    settingService.add(new Set("1","name","password"));
+	    
+	    System.out.println(settingService.get("1").getName());
+	}
 }
