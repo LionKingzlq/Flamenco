@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Adminity - 503 Error</title>
+  <title>Adminity - 503jsp Error</title>
   <link rel="shortcut icon" href="favicon.gif">
   <!---CSS Files-->
   <link rel="stylesheet" href="css/master.css">

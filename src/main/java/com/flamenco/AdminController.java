@@ -21,8 +21,10 @@ import com.flamenco.model.Admin;
 import com.flamenco.model.Set;
 import com.flamenco.model.User;
 import com.flamenco.service.IAdminService;
+import com.flamenco.service.IFavoriteService;
 import com.flamenco.service.IResGroupService;
 import com.flamenco.service.ISetService;
+import com.flamenco.service.ITeachService;
 import com.flamenco.service.IUserService;
 
 /**
@@ -42,6 +44,12 @@ public class AdminController {
 	@Resource
 	private IUserService userService;
 	
+	@Resource
+	private IFavoriteService favoriteService;
+	
+	@Resource
+	private ITeachService teachService;
+	
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
@@ -54,7 +62,8 @@ public class AdminController {
 		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
 		
 		String formattedDate = dateFormat.format(date);
-		
+		teachService.getAll();
+		favoriteService.getAll();
 		model.addAttribute("serverTime", formattedDate );
 		
 		return "index";
