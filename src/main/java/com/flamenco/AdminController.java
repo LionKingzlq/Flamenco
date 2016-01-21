@@ -35,6 +35,7 @@ public class AdminController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(AdminController.class);
 	
+	
 	@Resource(name="adminService")
 	private IAdminService adminService;
 
@@ -49,14 +50,13 @@ public class AdminController {
 	
 	@Resource
 	private ITeachService teachService;
-	
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
 	@RequestMapping(value = "", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
-		logger.info("Welcome home! The client locale is {}.", locale);
 		
+		logger.debug("Welcome home! The client locale is {}.", locale);
 		
 		Date date = new Date();
 		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
@@ -102,7 +102,6 @@ public class AdminController {
 	@RequestMapping("/redis") 
 	public void createData(HttpServletResponse response) { 	    
 	    settingService.add(new Set("1","name","password"));
-	    
 	    System.out.println(settingService.get("1").getName());
 	}
 }

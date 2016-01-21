@@ -8,7 +8,7 @@
 	<enableImports><![CDATA[true]]></enableImports>
 	<configs>
 		<config>src/main/webapp/WEB-INF/spring/applicationContext.xml</config>
-		<config>src/main/webapp/WEB-INF/spring/appServlet/spring-mvc.xml</config>
+		<config>src/main/webapp/WEB-INF/spring/spring-mvc.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>

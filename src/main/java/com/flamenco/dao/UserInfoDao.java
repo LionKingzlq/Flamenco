@@ -25,7 +25,7 @@ public class UserInfoDao extends BaseDao {
 		try {
 			Session session = getSession();
 			session.beginTransaction();
-			List list = session.createSQLQuery("SELECT * FROM resgroup").addEntity(User.class).list();
+			List<User> list = session.createSQLQuery("SELECT * FROM user").addEntity(User.class).list();
 			session.getTransaction().commit();
 			return list;
 		} catch (Exception e) {

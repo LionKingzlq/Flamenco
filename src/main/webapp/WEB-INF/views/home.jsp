@@ -8,14 +8,18 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html" charset="GBK">
 <title>Home</title>
-
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/css/home.css" type="text/css">
 <script type="text/javascript">
 	
 </script>
 
 </head>
 <body>
-	
+	<div class="header">
+		<img src="${pageContext.request.contextPath}/image/logo.png" style="float:left;"/>
+		<div class="menu"><div>admin</div></div>
+	</div>
 	<div>
 		<table>
 			<thead>
@@ -29,12 +33,12 @@
 					<td>${admin.getAdminId()}</td>
 					<td>${admin.getAdmin()}</td>
 					<td>${admin.getPassWord()}</td>
-					<td><input type="button" value="delete" /><input type="button"
-						value="modify" /></td>
+					<td><input type="button" value="delete" /><input
+						type="button" value="modify" /></td>
 				</tbody>
 			</c:forEach>
 		</table>
-		
+
 		<table>
 			<thead>
 				<th>No.</th>
@@ -47,13 +51,13 @@
 					<td>${resGroup.getId()}</td>
 					<td>${resGroup.getName()}</td>
 					<td>${resGroup.getDescription()}</td>
-					<td><input type="button" value="delete" /><input type="button"
-						value="modify" /></td>
+					<td><input type="button" value="delete" /><input
+						type="button" value="modify" /></td>
 				</tbody>
 			</c:forEach>
 		</table>
-		
-		
+
+
 		<table>
 			<thead>
 				<th>No.</th>
@@ -66,8 +70,8 @@
 					<td>${user.getId()}</td>
 					<td>${user.getName()}</td>
 					<td>${user.getPassWord()}</td>
-					<td><input type="button" value="delete" /><input type="button"
-						value="modify" /></td>
+					<td><input type="button" value="delete" /><input
+						type="button" value="modify" /></td>
 				</tbody>
 			</c:forEach>
 		</table>
