@@ -1,6 +1,6 @@
 package com.flamenco.model;
 
-import java.sql.Time;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,6 +8,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import com.flamenco.util.FormatUtil;
 
 @Entity
 @Table(name="resGroup")
@@ -23,11 +25,28 @@ public class ResGroup {
 	private String name;
 	
 	@Column(name="startTime")
-	private Time startTime;
+	private Date startTime;
 	
 	@Column(name="description")
 	private String description;
 
+	@Column(name="adminId")
+	private int adminId;
+
+	public void setStartTime(Date startTime) {
+		this.startTime = startTime;
+	}
+	
+	public int getAdminId() {
+		return adminId;
+	}
+	
+	public void setAdminId(int adminId) {
+		this.adminId = adminId;
+	}
+	public ResGroup(){
+		
+	}
 	public int getId() {
 		return id;
 	}
@@ -44,13 +63,10 @@ public class ResGroup {
 		this.name = name;
 	}
 
-	public Time getStartTime() {
-		return startTime;
+	public String getStarttime() {
+		return FormatUtil.Date2String(startTime);
 	}
 
-	public void setStartTime(Time startTime) {
-		this.startTime = startTime;
-	}
 
 	public String getDescription() {
 		return description;

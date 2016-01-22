@@ -13,11 +13,13 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.flamenco.model.Admin;
+import com.flamenco.model.Advice;
 import com.flamenco.model.Set;
 import com.flamenco.model.User;
 import com.flamenco.service.IAdminService;
@@ -26,6 +28,8 @@ import com.flamenco.service.IResGroupService;
 import com.flamenco.service.ISetService;
 import com.flamenco.service.ITeachService;
 import com.flamenco.service.IUserService;
+
+import net.sf.json.JSONObject;
 
 /**
  * Handles requests for the application home page.
@@ -96,6 +100,8 @@ public class AdminController {
 		return "404";
 	}
 	
+	
+	
 	@Resource(name="setService")
 	private ISetService settingService;
 	
@@ -103,5 +109,18 @@ public class AdminController {
 	public void createData(HttpServletResponse response) { 	    
 	    settingService.add(new Set("1","name","password"));
 	    System.out.println(settingService.get("1").getName());
+	}
+	
+	@ResponseBody
+	@RequestMapping(value = "advice", method = RequestMethod.POST, headers={"content-type=application/json", "content-type=application/xml"})
+	public JSONObject getAdvice(@RequestBody Advice advice) {
+		Boolean falg = adminService.addAdivce(advice);
+		JSONObject result = new JSONObject();
+		if(falg){
+			result.put("code", 200);
+		}else {
+			result.put("code", 404);			
+		}
+		return result;
 	}
 }

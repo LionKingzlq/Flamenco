@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.flamenco.dao.AdminDao;
 import com.flamenco.model.Admin;
+import com.flamenco.model.Advice;
 import com.flamenco.service.IAdminService;
 
 @Service(value = "adminService")
@@ -38,5 +39,10 @@ public class AdminService extends BaseService implements IAdminService {
 	@Override
 	public List getAll() {
 		return adminDao.getAllAdmin();
+	}
+
+	@Override
+	public boolean addAdivce(Advice advice) {
+		return false;
 	}
 }

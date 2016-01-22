@@ -7,6 +7,7 @@ import org.hibernate.Session;
 import org.springframework.stereotype.Repository;
 
 import com.flamenco.model.Admin;
+import com.flamenco.model.Advice;
 
 @Repository(value="adminDao")
 public class AdminDao extends BaseDao {
@@ -40,15 +41,7 @@ public class AdminDao extends BaseDao {
 	}
 
 	public Boolean addAdmin(Admin admin) {
-		try {
-			Session session = getSession();
-			session.beginTransaction();
-			session.save(admin);
-			session.getTransaction().commit();
-			return true;
-		} catch (Exception e) {
-			return false;
-		}
+		return save(admin);
 	}
 
 	public Boolean deleteAdmin(Admin admin) {
@@ -84,5 +77,21 @@ public class AdminDao extends BaseDao {
 			System.err.println("checkAdmin:"+e.getMessage());
 			return false;
 		}
+	}
+	
+	public boolean addAdvice(Advice advice) {
+		return save(advice);
+	}
+	private boolean save(Object object) {
+		try {
+			Session session = getSession();
+			session.beginTransaction();
+			session.save(object);
+			session.getTransaction().commit();
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
+		
 	}
 }

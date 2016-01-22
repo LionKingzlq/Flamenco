@@ -37,4 +37,11 @@ public class UserService extends BaseService implements IUserService {
 	public List getAll() {
 		return userInfoDao.getAll();
 	}
+	
+	@Override
+	public User login(User loginUser) {
+
+		User user = userInfoDao.check(loginUser);
+		return user;
+	}
 }

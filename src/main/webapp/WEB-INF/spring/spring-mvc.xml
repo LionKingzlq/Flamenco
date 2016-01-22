@@ -30,8 +30,8 @@
 	<resources mapping="/temp/**" location="/res/temp/" />
 	<resources mapping="/template/**" location="/res/template/" />
 	<resources mapping="/*.html" location="/WEB-INF/views/" />
+	<resources mapping="/*.jsp" location="/WEB-INF/views/" />
 	
-	<default-servlet-handler />
 
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources 
 		in the /WEB-INF/views directory -->

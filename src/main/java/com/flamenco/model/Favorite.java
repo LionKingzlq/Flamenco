@@ -18,14 +18,35 @@ public class Favorite {
 	@Column(name="id")
 	private int id;
 	
-	@Column(name="recId")
-	private int recId;
+	@Column(name="teachResId")
+	private int teachResId;
+	
+	@Column(name="entertainId")
+	private int entertainId;
 	
 	@Column(name="userId")
 	private int userId;
 	
 	@Column(name="addTime")
 	private Time addTime;
+	
+	public int getTeachResId() {
+		return teachResId;
+	}
+
+	public void setTeachResId(int teachResId) {
+		this.teachResId = teachResId;
+	}
+
+	public int getEntertainId() {
+		return entertainId;
+	}
+
+	public void setEntertainId(int entertainId) {
+		this.entertainId = entertainId;
+	}
+
+
 
 	public int getId() {
 		return id;
@@ -33,14 +54,6 @@ public class Favorite {
 
 	public void setId(int id) {
 		this.id = id;
-	}
-
-	public int getRecId() {
-		return recId;
-	}
-
-	public void setRecId(int recId) {
-		this.recId = recId;
 	}
 
 	public int getUserId() {
@@ -54,7 +67,7 @@ public class Favorite {
 	public Time getAddTime() {
 		return addTime;
 	}
-
+	
 	public void setAddTime(Time addTime) {
 		this.addTime = addTime;
 	}

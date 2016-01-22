@@ -1,38 +1,255 @@
-2016-01-01 17:58:02 [http-bio-8080-exec-5:21912] - [ERROR]  Column 'address' not found.
-2016-01-04 20:50:39 [http-bio-8080-exec-13:22150] - [ERROR]  Column 'address' not found.
-2016-01-04 20:54:03 [http-bio-8080-exec-15:226111] - [ERROR]  Column 'address' not found.
-2016-01-04 20:54:15 [http-bio-8080-exec-4:238079] - [ERROR]  Column 'address' not found.
-2016-01-04 20:54:57 [http-bio-8080-exec-3:280274] - [ERROR]  Column 'address' not found.
-2016-01-04 20:55:00 [http-bio-8080-exec-3:283766] - [ERROR]  Column 'address' not found.
-2016-01-04 20:56:23 [http-bio-8080-exec-15:366539] - [ERROR]  Column 'address' not found.
-2016-01-04 20:56:25 [http-bio-8080-exec-17:368653] - [ERROR]  Column 'address' not found.
-2016-01-04 21:00:29 [http-bio-8080-exec-2:612779] - [ERROR]  Column 'address' not found.
-2016-01-04 21:03:33 [http-bio-8080-exec-5:8756] - [ERROR]  Column 'address' not found.
-2016-01-04 21:03:41 [http-bio-8080-exec-8:16546] - [ERROR]  Column 'address' not found.
-2016-01-04 21:03:44 [http-bio-8080-exec-10:19708] - [ERROR]  Column 'address' not found.
-2016-01-04 21:04:19 [http-bio-8080-exec-4:55029] - [ERROR]  Column 'address' not found.
-2016-01-04 21:04:21 [http-bio-8080-exec-4:56378] - [ERROR]  Column 'address' not found.
-2016-01-04 21:04:29 [http-bio-8080-exec-8:64995] - [ERROR]  Column 'address' not found.
-2016-01-04 21:04:30 [http-bio-8080-exec-8:66042] - [ERROR]  Column 'address' not found.
-2016-01-04 21:05:40 [http-bio-8080-exec-12:25154] - [ERROR]  Column 'address' not found.
-2016-01-04 21:08:51 [http-bio-8080-exec-3:215863] - [ERROR]  Column 'address' not found.
-2016-01-04 21:11:18 [http-bio-8080-exec-5:9888] - [ERROR]  Column 'address' not found.
-2016-01-04 21:11:27 [http-bio-8080-exec-8:18616] - [ERROR]  Column 'address' not found.
-2016-01-04 21:12:32 [http-bio-8080-exec-5:83239] - [ERROR]  Column 'address' not found.
-2016-01-04 21:12:50 [http-bio-8080-exec-10:101344] - [ERROR]  Column 'address' not found.
-2016-01-04 21:13:27 [http-bio-8080-exec-7:138478] - [ERROR]  Column 'address' not found.
-2016-01-04 21:13:41 [http-bio-8080-exec-7:152843] - [ERROR]  Column 'address' not found.
-2016-01-04 21:13:54 [http-bio-8080-exec-7:165358] - [ERROR]  Column 'address' not found.
-2016-01-04 21:14:10 [http-bio-8080-exec-7:181575] - [ERROR]  Column 'address' not found.
-2016-01-04 21:15:55 [http-bio-8080-exec-3:286215] - [ERROR]  Column 'address' not found.
-2016-01-04 21:18:45 [http-bio-8080-exec-1:457076] - [ERROR]  Column 'address' not found.
-2016-01-04 21:19:01 [http-bio-8080-exec-1:472989] - [ERROR]  Column 'address' not found.
-2016-01-04 21:19:40 [http-bio-8080-exec-5:511328] - [ERROR]  Column 'address' not found.
-2016-01-04 21:19:42 [http-bio-8080-exec-5:513668] - [ERROR]  Column 'address' not found.
-2016-01-04 21:20:48 [http-bio-8080-exec-9:579650] - [ERROR]  Column 'address' not found.
-2016-01-04 21:21:27 [http-bio-8080-exec-1:618612] - [ERROR]  Column 'address' not found.
-2016-01-04 21:21:30 [http-bio-8080-exec-1:621269] - [ERROR]  Column 'address' not found.
-2016-01-20 17:23:27 [ContainerBackgroundProcessor[StandardEngine[Catalina]]:1809] - [ERROR]  An SQLException was provoked by the following failure: java.lang.InterruptedException
-2016-01-20 23:11:25 [http-bio-8080-exec-9:6971] - [ERROR]  Column 'address' not found.
-2016-01-20 23:20:49 [http-bio-8080-exec-9:323653] - [ERROR]  Column 'address' not found.
-2016-01-20 23:51:20 [http-bio-8080-exec-7:10808] - [ERROR]  Column 'description' not found.
+2016-01-21 14:05:04 [ContainerBackgroundProcessor[StandardEngine[Catalina]]:2108] - [ERROR]  An SQLException was provoked by the following failure: java.lang.InterruptedException
+2016-01-21 14:36:39 [http-bio-8080-exec-7:40532] - [ERROR]  Data truncation: Data too long for column 'phone' at row 1
+2016-01-21 14:36:45 [http-bio-8080-exec-7:46373] - [ERROR]  Data truncation: Data too long for column 'phone' at row 1
+2016-01-21 14:36:48 [http-bio-8080-exec-7:49280] - [ERROR]  Data truncation: Data too long for column 'phone' at row 1
+2016-01-21 14:41:59 [http-bio-8080-exec-6:39155] - [ERROR]  Data truncation: Data too long for column 'phone' at row 1
+2016-01-21 15:19:22 [ContainerBackgroundProcessor[StandardEngine[Catalina]]:1896] - [ERROR]  An SQLException was provoked by the following failure: java.lang.InterruptedException
+2016-01-21 17:27:06 [ContainerBackgroundProcessor[StandardEngine[Catalina]]:1466] - [ERROR]  An SQLException was provoked by the following failure: java.lang.InterruptedException
+2016-01-21 17:47:24 [ContainerBackgroundProcessor[StandardEngine[Catalina]]:1177] - [ERROR]  An SQLException was provoked by the following failure: java.lang.InterruptedException
+2016-01-21 17:48:03 [http-bio-8080-exec-2:34713] - [ERROR]  Field 'id' doesn't have a default value
+2016-01-21 17:48:03 [http-bio-8080-exec-2:34714] - [ERROR]  could not insert: [com.flamenco.model.ResGroup]
+2016-01-21 17:48:36 [http-bio-8080-exec-3:67643] - [ERROR]  Field 'id' doesn't have a default value
+2016-01-21 17:48:36 [http-bio-8080-exec-3:67643] - [ERROR]  could not insert: [com.flamenco.model.ResGroup]
+2016-01-21 17:57:28 [http-bio-8080-exec-6:22412] - [ERROR]  Column 'description' cannot be null
+2016-01-21 17:57:28 [http-bio-8080-exec-6:22413] - [ERROR]  could not insert: [com.flamenco.model.ResGroup]
+2016-01-21 17:58:44 [http-bio-8080-exec-10:51560] - [ERROR]  Column 'description' cannot be null
+2016-01-21 17:58:44 [http-bio-8080-exec-10:51561] - [ERROR]  could not insert: [com.flamenco.model.ResGroup]
+2016-01-22 13:03:03 [ContainerBackgroundProcessor[StandardEngine[Catalina]]:930] - [ERROR]  Context initialization failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'adminController': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'adminService': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'baseDao': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory' defined in ServletContext resource [/WEB-INF/spring/applicationContext.xml]: Invocation of init method failed; nested exception is java.lang.annotation.AnnotationFormatError: Duplicate annotation for class: interface javax.persistence.Column: @javax.persistence.Column(nullable=true, unique=false, precision=0, name=type, length=255, scale=0, updatable=true, columnDefinition=, table=, insertable=true)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessPropertyValues(CommonAnnotationBeanPostProcessor.java:306)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1106)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:456)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:294)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:225)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:291)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:193)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:585)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:913)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:464)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:385)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:284)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:111)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:5003)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5517)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.StandardContext.reload(StandardContext.java:4020)
+	at org.apache.catalina.loader.WebappLoader.backgroundProcess(WebappLoader.java:425)
+	at org.apache.catalina.core.ContainerBase.backgroundProcess(ContainerBase.java:1344)
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1545)
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1555)
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1555)
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.run(ContainerBase.java:1523)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'adminService': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'baseDao': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory' defined in ServletContext resource [/WEB-INF/spring/applicationContext.xml]: Invocation of init method failed; nested exception is java.lang.annotation.AnnotationFormatError: Duplicate annotation for class: interface javax.persistence.Column: @javax.persistence.Column(nullable=true, unique=false, precision=0, name=type, length=255, scale=0, updatable=true, columnDefinition=, table=, insertable=true)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessPropertyValues(CommonAnnotationBeanPostProcessor.java:306)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1106)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:456)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:294)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:225)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:291)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:442)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:416)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:549)
+	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:150)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessPropertyValues(CommonAnnotationBeanPostProcessor.java:303)
+	... 24 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'baseDao': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory' defined in ServletContext resource [/WEB-INF/spring/applicationContext.xml]: Invocation of init method failed; nested exception is java.lang.annotation.AnnotationFormatError: Duplicate annotation for class: interface javax.persistence.Column: @javax.persistence.Column(nullable=true, unique=false, precision=0, name=type, length=255, scale=0, updatable=true, columnDefinition=, table=, insertable=true)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessPropertyValues(CommonAnnotationBeanPostProcessor.java:306)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1106)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:456)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:294)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:225)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:291)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:442)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:416)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:549)
+	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:159)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessPropertyValues(CommonAnnotationBeanPostProcessor.java:303)
+	... 37 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory' defined in ServletContext resource [/WEB-INF/spring/applicationContext.xml]: Invocation of init method failed; nested exception is java.lang.annotation.AnnotationFormatError: Duplicate annotation for class: interface javax.persistence.Column: @javax.persistence.Column(nullable=true, unique=false, precision=0, name=type, length=255, scale=0, updatable=true, columnDefinition=, table=, insertable=true)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1455)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:519)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:456)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:294)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:225)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:291)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:442)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:416)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:549)
+	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:159)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessPropertyValues(CommonAnnotationBeanPostProcessor.java:303)
+	... 50 more
+Caused by: java.lang.annotation.AnnotationFormatError: Duplicate annotation for class: interface javax.persistence.Column: @javax.persistence.Column(nullable=true, unique=false, precision=0, name=type, length=255, scale=0, updatable=true, columnDefinition=, table=, insertable=true)
+	at sun.reflect.annotation.AnnotationParser.parseAnnotations2(AnnotationParser.java:125)
+	at sun.reflect.annotation.AnnotationParser.parseAnnotations(AnnotationParser.java:72)
+	at java.lang.reflect.Field.declaredAnnotations(Field.java:1150)
+	at java.lang.reflect.Field.declaredAnnotations(Field.java:1148)
+	at java.lang.reflect.Field.getAnnotation(Field.java:1120)
+	at java.lang.reflect.AnnotatedElement.isAnnotationPresent(AnnotatedElement.java:258)
+	at java.lang.reflect.AccessibleObject.isAnnotationPresent(AccessibleObject.java:191)
+	at org.hibernate.annotations.common.reflection.java.JavaAnnotationReader.isAnnotationPresent(JavaAnnotationReader.java:50)
+	at org.hibernate.annotations.common.reflection.java.JavaXAnnotatedElement.isAnnotationPresent(JavaXAnnotatedElement.java:60)
+	at org.hibernate.cfg.PropertyContainer.mustBeSkipped(PropertyContainer.java:246)
+	at org.hibernate.cfg.PropertyContainer.initProperties(PropertyContainer.java:164)
+	at org.hibernate.cfg.PropertyContainer.<init>(PropertyContainer.java:67)
+	at org.hibernate.cfg.InheritanceState.getElementsToProcess(InheritanceState.java:234)
+	at org.hibernate.cfg.AnnotationBinder.bindClass(AnnotationBinder.java:705)
+	at org.hibernate.cfg.AnnotationConfiguration.processArtifactsOfType(AnnotationConfiguration.java:636)
+	at org.hibernate.cfg.AnnotationConfiguration.secondPassCompile(AnnotationConfiguration.java:359)
+	at org.hibernate.cfg.Configuration.buildMappings(Configuration.java:1206)
+	at org.springframework.orm.hibernate3.LocalSessionFactoryBean.buildSessionFactory(LocalSessionFactoryBean.java:717)
+	at org.springframework.orm.hibernate3.AbstractSessionFactoryBean.afterPropertiesSet(AbstractSessionFactoryBean.java:188)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1514)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1452)
+	... 62 more
+2016-01-22 13:14:40 [ContainerBackgroundProcessor[StandardEngine[Catalina]]:1167] - [ERROR]  An SQLException was provoked by the following failure: java.lang.InterruptedException
+2016-01-22 13:45:08 [ContainerBackgroundProcessor[StandardEngine[Catalina]]:1069] - [ERROR]  An SQLException was provoked by the following failure: java.lang.InterruptedException
+2016-01-22 14:47:26 [ContainerBackgroundProcessor[StandardEngine[Catalina]]:1531] - [ERROR]  Context initialization failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'adminController': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'adminService': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'baseDao': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory' defined in ServletContext resource [/WEB-INF/spring/applicationContext.xml]: Invocation of init method failed; nested exception is org.hibernate.InstantiationException: could not instantiate test objectcom.flamenco.model.ResGroup
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessPropertyValues(CommonAnnotationBeanPostProcessor.java:306)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1106)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:456)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:294)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:225)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:291)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:193)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:585)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:913)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:464)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:385)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:284)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:111)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:5003)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5517)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.StandardContext.reload(StandardContext.java:4020)
+	at org.apache.catalina.loader.WebappLoader.backgroundProcess(WebappLoader.java:425)
+	at org.apache.catalina.core.ContainerBase.backgroundProcess(ContainerBase.java:1344)
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1545)
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1555)
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1555)
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.run(ContainerBase.java:1523)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'adminService': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'baseDao': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory' defined in ServletContext resource [/WEB-INF/spring/applicationContext.xml]: Invocation of init method failed; nested exception is org.hibernate.InstantiationException: could not instantiate test objectcom.flamenco.model.ResGroup
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessPropertyValues(CommonAnnotationBeanPostProcessor.java:306)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1106)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:456)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:294)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:225)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:291)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:442)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:416)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:549)
+	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:150)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessPropertyValues(CommonAnnotationBeanPostProcessor.java:303)
+	... 24 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'baseDao': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory' defined in ServletContext resource [/WEB-INF/spring/applicationContext.xml]: Invocation of init method failed; nested exception is org.hibernate.InstantiationException: could not instantiate test objectcom.flamenco.model.ResGroup
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessPropertyValues(CommonAnnotationBeanPostProcessor.java:306)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1106)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:456)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:294)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:225)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:291)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:442)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:416)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:549)
+	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:159)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessPropertyValues(CommonAnnotationBeanPostProcessor.java:303)
+	... 37 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory' defined in ServletContext resource [/WEB-INF/spring/applicationContext.xml]: Invocation of init method failed; nested exception is org.hibernate.InstantiationException: could not instantiate test objectcom.flamenco.model.ResGroup
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1455)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:519)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:456)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:294)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:225)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:291)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:442)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:416)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:549)
+	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:159)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessPropertyValues(CommonAnnotationBeanPostProcessor.java:303)
+	... 50 more
+Caused by: org.hibernate.InstantiationException: could not instantiate test objectcom.flamenco.model.ResGroup
+	at org.hibernate.engine.UnsavedValueFactory.instantiate(UnsavedValueFactory.java:48)
+	at org.hibernate.engine.UnsavedValueFactory.getUnsavedIdentifierValue(UnsavedValueFactory.java:67)
+	at org.hibernate.tuple.PropertyFactory.buildIdentifierProperty(PropertyFactory.java:67)
+	at org.hibernate.tuple.entity.EntityMetamodel.<init>(EntityMetamodel.java:136)
+	at org.hibernate.persister.entity.AbstractEntityPersister.<init>(AbstractEntityPersister.java:475)
+	at org.hibernate.persister.entity.SingleTableEntityPersister.<init>(SingleTableEntityPersister.java:133)
+	at org.hibernate.persister.PersisterFactory.createClassPersister(PersisterFactory.java:84)
+	at org.hibernate.impl.SessionFactoryImpl.<init>(SessionFactoryImpl.java:295)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1385)
+	at org.hibernate.cfg.AnnotationConfiguration.buildSessionFactory(AnnotationConfiguration.java:954)
+	at org.springframework.orm.hibernate3.LocalSessionFactoryBean.newSessionFactory(LocalSessionFactoryBean.java:860)
+	at org.springframework.orm.hibernate3.LocalSessionFactoryBean.buildSessionFactory(LocalSessionFactoryBean.java:779)
+	at org.springframework.orm.hibernate3.AbstractSessionFactoryBean.afterPropertiesSet(AbstractSessionFactoryBean.java:188)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1514)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1452)
+	... 62 more
+Caused by: java.lang.reflect.InvocationTargetException
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+	at org.hibernate.engine.UnsavedValueFactory.instantiate(UnsavedValueFactory.java:45)
+	... 76 more
+Caused by: java.lang.Error: Unresolved compilation problems: 
+	Duplicate field ResGroup.description
+	Duplicate field ResGroup.description
+
+	at com.flamenco.model.ResGroup.<init>(ResGroup.java:32)
+	... 81 more
+2016-01-22 17:10:56 [http-bio-8080-exec-21:11037] - [ERROR]  You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'passWord = null' at line 1
+2016-01-22 17:11:15 [http-bio-8080-exec-24:30108] - [ERROR]  You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'passWord = null' at line 1
+2016-01-22 17:11:45 [http-bio-8080-exec-30:60016] - [ERROR]  You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'passWord = password' at line 1
+2016-01-22 17:11:47 [http-bio-8080-exec-30:61980] - [ERROR]  You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'passWord = password' at line 1
+2016-01-22 17:12:07 [http-bio-8080-exec-30:81397] - [ERROR]  You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'passWord = password' at line 1
+2016-01-22 17:12:07 [http-bio-8080-exec-30:81759] - [ERROR]  You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'passWord = password' at line 1
+2016-01-22 17:12:07 [http-bio-8080-exec-30:82023] - [ERROR]  You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'passWord = password' at line 1
+2016-01-22 17:12:08 [http-bio-8080-exec-30:82422] - [ERROR]  You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'passWord = password' at line 1
+2016-01-22 17:13:07 [http-bio-8080-exec-5:15543] - [ERROR]  You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'passWord = password' at line 1
+2016-01-22 17:14:32 [http-bio-8080-exec-5:63780] - [ERROR]  You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'passWord = password' at line 1
+2016-01-22 17:14:47 [http-bio-8080-exec-6:79394] - [ERROR]  You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'passWord = password' at line 1
+2016-01-22 17:16:55 [http-bio-8080-exec-4:16866] - [ERROR]  You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''password' at line 1
+2016-01-22 17:16:57 [http-bio-8080-exec-3:19370] - [ERROR]  You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''password' at line 1
+2016-01-22 17:26:12 [ContainerBackgroundProcessor[StandardEngine[Catalina]]:5178] - [ERROR]  An SQLException was provoked by the following failure: java.lang.InterruptedException
+2016-01-22 17:57:07 [http-bio-8080-exec-4:31170] - [ERROR]  Field 'id' doesn't have a default value
+2016-01-22 17:57:07 [http-bio-8080-exec-4:31170] - [ERROR]  could not insert: [com.flamenco.model.Favorite]
+2016-01-22 17:59:03 [http-bio-8080-exec-9:146739] - [ERROR]  Field 'id' doesn't have a default value
+2016-01-22 17:59:03 [http-bio-8080-exec-9:146740] - [ERROR]  could not insert: [com.flamenco.model.Favorite]
+2016-01-22 18:00:43 [http-bio-8080-exec-10:68367] - [ERROR]  Field 'id' doesn't have a default value
+2016-01-22 18:00:43 [http-bio-8080-exec-10:68368] - [ERROR]  could not insert: [com.flamenco.model.Favorite]
+2016-01-22 18:02:52 [http-bio-8080-exec-7:15527] - [ERROR]  Field 'id' doesn't have a default value
+2016-01-22 18:02:52 [http-bio-8080-exec-7:15528] - [ERROR]  could not insert: [com.flamenco.model.Favorite]
+2016-01-22 18:03:43 [http-bio-8080-exec-2:7299] - [ERROR]  Field 'id' doesn't have a default value
+2016-01-22 18:03:43 [http-bio-8080-exec-2:7299] - [ERROR]  could not insert: [com.flamenco.model.Favorite]
+2016-01-22 18:03:44 [http-bio-8080-exec-8:8605] - [ERROR]  Field 'id' doesn't have a default value
+2016-01-22 18:03:44 [http-bio-8080-exec-8:8606] - [ERROR]  could not insert: [com.flamenco.model.Favorite]
+2016-01-22 18:03:46 [http-bio-8080-exec-4:10857] - [ERROR]  Field 'id' doesn't have a default value
+2016-01-22 18:03:46 [http-bio-8080-exec-4:10858] - [ERROR]  could not insert: [com.flamenco.model.Favorite]
+2016-01-22 18:06:31 [http-bio-8080-exec-5:70624] - [ERROR]  Field 'id' doesn't have a default value
+2016-01-22 18:06:31 [http-bio-8080-exec-5:70624] - [ERROR]  could not insert: [com.flamenco.model.Favorite]
+2016-01-22 18:12:08 [http-bio-8080-exec-2:3424] - [ERROR]  Cannot add or update a child row: a foreign key constraint fails (`flamenco`.`favorite`, CONSTRAINT `favoriteTeachResFK` FOREIGN KEY (`teachResId`) REFERENCES `teachRes` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)
+2016-01-22 18:12:08 [http-bio-8080-exec-2:3425] - [ERROR]  could not insert: [com.flamenco.model.Favorite]
+2016-01-22 18:12:09 [http-bio-8080-exec-4:5248] - [ERROR]  Cannot add or update a child row: a foreign key constraint fails (`flamenco`.`favorite`, CONSTRAINT `favoriteTeachResFK` FOREIGN KEY (`teachResId`) REFERENCES `teachRes` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)
+2016-01-22 18:12:09 [http-bio-8080-exec-4:5249] - [ERROR]  could not insert: [com.flamenco.model.Favorite]
+2016-01-22 18:13:23 [http-bio-8080-exec-10:78724] - [ERROR]  Cannot add or update a child row: a foreign key constraint fails (`flamenco`.`favorite`, CONSTRAINT `favoriteTeachResFK` FOREIGN KEY (`teachResId`) REFERENCES `teachRes` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)
+2016-01-22 18:13:23 [http-bio-8080-exec-10:78724] - [ERROR]  could not insert: [com.flamenco.model.Favorite]

@@ -1,11 +1,9 @@
 package com.flamenco.service;
 
-import java.util.List;
 import com.flamenco.model.Admin;
-import org.springframework.stereotype.Repository;
-import org.springframework.stereotype.Service;
-
+import com.flamenco.model.Advice;
 
 public interface IAdminService extends IBaseService{
 	public boolean checkAdmin(Admin admin);
+	public boolean addAdivce(Advice advice);
 }

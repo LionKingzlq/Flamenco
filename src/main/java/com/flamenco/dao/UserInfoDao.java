@@ -32,7 +32,19 @@ public class UserInfoDao extends BaseDao {
 			System.out.println(e.getMessage());
 		}
 		return null;
-
+	}
+	public User check(User user) {
+		try {
+			Session session = getSession();
+			session.beginTransaction();
+			List<User> list = session.createSQLQuery("SELECT * FROM user where phone = '" + user.getPhone() + "' AND passWord = '" + user.getPassword() + "'").addEntity(User.class).list();
+			session.getTransaction().commit();
+			if(list.size() > 0)
+				return list.get(0);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		return null;
 	}
 	
 }
