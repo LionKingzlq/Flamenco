@@ -1,7 +1,6 @@
 package com.flamenco.model;
 
-import java.sql.Blob;
-import java.sql.Time;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,6 +8,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import com.flamenco.util.FormatUtil;
 
 @Entity
 @Table(name = "teachRes")
@@ -20,22 +21,19 @@ public class TeachRes {
 	private int id;
 
 	@Column(name = "content")
-	private Blob content;
+	private String content;
 
 	@Column(name = "type")
 	private int type;
 
 	@Column(name = "startTime")
-	private Time startTime;
+	private Date startTime;
 
 	@Column(name = "groupId")
 	private int groupId;
 
 	@Column(name = "difficulty")
 	private int difficulty;
-
-	@Column(name = "addTime")
-	private Time addTime;
 
 	@Column(name = "adminId")
 	private int adminId;
@@ -48,12 +46,13 @@ public class TeachRes {
 		this.id = id;
 	}
 
-	public Blob getContent() {
-		return content;
+	public String getContent() {
+		String[] fileName = content.split("/");
+		return fileName[fileName.length - 1];
 	}
 
-	public void setContent(Blob content) {
-		this.content = content;
+	public void setContent(String filePath) {
+		this.content = filePath;
 	}
 
 	public int getType() {
@@ -64,11 +63,11 @@ public class TeachRes {
 		this.type = type;
 	}
 
-	public Time getStartTime() {
-		return startTime;
+	public String getStarttime() {
+		return FormatUtil.Date2String(startTime);
 	}
 
-	public void setStartTime(Time startTime) {
+	public void setStartTime(Date startTime) {
 		this.startTime = startTime;
 	}
 
@@ -86,14 +85,6 @@ public class TeachRes {
 
 	public void setDifficulty(int difficulty) {
 		this.difficulty = difficulty;
-	}
-
-	public Time getAddTime() {
-		return addTime;
-	}
-
-	public void setAddTime(Time addTime) {
-		this.addTime = addTime;
 	}
 
 	public int getAdminId() {

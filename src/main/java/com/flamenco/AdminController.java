@@ -3,6 +3,7 @@ package com.flamenco;
 import java.text.DateFormat;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
@@ -29,6 +30,7 @@ import com.flamenco.service.ISetService;
 import com.flamenco.service.ITeachService;
 import com.flamenco.service.IUserService;
 
+import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
 /**
@@ -38,7 +40,6 @@ import net.sf.json.JSONObject;
 public class AdminController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(AdminController.class);
-	
 	
 	@Resource(name="adminService")
 	private IAdminService adminService;
@@ -100,8 +101,6 @@ public class AdminController {
 		return "404";
 	}
 	
-	
-	
 	@Resource(name="setService")
 	private ISetService settingService;
 	
@@ -122,5 +121,15 @@ public class AdminController {
 			result.put("code", 404);			
 		}
 		return result;
+	}
+	
+	@ResponseBody
+	@RequestMapping(value = "adminsInPage", method = RequestMethod.GET)
+	public JSONObject getAdminList(int pageNum) {
+		List<Admin> admins = adminService.getAll();
+		JSONArray userArray = JSONArray.fromObject(admins);
+		JSONObject data = new JSONObject();
+		data.put("array", userArray);
+		return data;
 	}
 }

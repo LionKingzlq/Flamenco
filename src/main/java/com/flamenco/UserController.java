@@ -1,10 +1,15 @@
 package com.flamenco;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.List;
 import java.util.Locale;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -36,7 +41,6 @@ public class UserController {
 		return "503";
 	}
 
-	
 	@ResponseBody
 	@RequestMapping(value = "usersInPage", method = RequestMethod.GET)
 	public JSONObject GetUserList(int pageNum) {
@@ -56,12 +60,23 @@ public class UserController {
 	public String memberAddList(HttpServletRequest request) {
 		try {
 			request.setCharacterEncoding("utf-8");
-			fileOperateUtil.upLoadExcel(request);
+			fileOperateUtil.upLoadFile(request, true);
 			System.out.println("abraham memberAddlist");
 		} catch (Exception e) {
 			logger.debug("memberAddList:" + e.getMessage());
 		}
 		return "index";
+	}
+	
+	@ResponseBody
+	@RequestMapping(value = "deleteUser", method = RequestMethod.GET)
+	public JSONObject deleteUser(int userId) {
+		User user = new User();
+		user.setId(userId);
+		boolean result = userService.delete(user);
+		JSONObject data = new JSONObject();
+		data.put("result", result);
+		return data;
 	}
 	
 	@ResponseBody
@@ -89,5 +104,31 @@ public class UserController {
 			result.put("code", 404);			
 		}
 		return result;
+	}
+	
+	@RequestMapping(value = "download", method = RequestMethod.GET)
+	public String getResource(String fileName, HttpServletResponse response) {
+		String fileDir = "/Users/abraham/Documents/workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/Flamenco/file/12/";
+		
+		String filepath = Thread.currentThread().getContextClassLoader().getResource("").getPath();
+		System.out.println("filepath"+filepath);
+		response.setCharacterEncoding("utf-8");
+		response.setContentType("multipart/form-data");
+		response.setHeader("Content-Disposition", "attachment;fileName="+fileName);
+		
+		try {
+			InputStream inputStream = new FileInputStream(new File(fileDir + fileName));
+			OutputStream outputStream = response.getOutputStream();
+			byte[] b = new byte[2048];
+			int length;
+			while ((length = inputStream.read(b)) > 0) {
+				outputStream.write(b, 0, length);
+			}
+			outputStream.close();
+			inputStream.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
 	}
 }

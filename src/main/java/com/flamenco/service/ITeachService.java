@@ -1,5 +1,7 @@
 package com.flamenco.service;
 
-public interface ITeachService extends IBaseService{
+import java.util.List;
 
+public interface ITeachService extends IBaseService{
+	public List getAll(int resGroupId);
 }

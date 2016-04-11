@@ -93,9 +93,12 @@
 				</dt>
 				<dd>
 					<ul>
-						<li><a _href="res-catalog-list.html" href="javascript:void(0)">目录管理</a></li>
-						<li><a _href="res-catalog-list.html" href="javascript:void(0)">讲义管理</a></li>
-						<li><a _href="res-catalog-list.html" href="javascript:void(0)">作业管理</a></li>
+						<li><a _href="res-group-list.html"
+							href="javascript:void(0)">目录管理</a></li>
+						<li><a _href="res-group-list.html"
+							href="javascript:void(0)">讲义管理</a></li>
+						<li><a _href="res-group-list.html"
+							href="javascript:void(0)">作业管理</a></li>
 					</ul>
 				</dd>
 			</dl>
@@ -108,6 +111,7 @@
 				<dd>
 					<ul>
 						<li><a _href="member-list.html" href="javascript:;">用户列表</a></li>
+						<li><a _href="member-add-list.html" href="javascript:;">用户批量添加</a></li>
 						<li><a _href="member-del.html" href="javascript:;">删除的用户</a></li>
 						<li><a _href="member-level.html" href="javascript:;">等级管理</a></li>
 						<li><a _href="member-scoreoperation.html" href="javascript:;">积分管理</a></li>
@@ -120,7 +124,20 @@
 					</ul>
 				</dd>
 			</dl>
-
+			<dl id="menu-admin">
+				<dt>
+					<i class="Hui-iconfont">&#xe62d;</i> 管理员管理<i
+						class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i>
+				</dt>
+				<dd>
+					<ul>
+						<li><a _href="admin-list.html" href="javascript:void(0)">管理员列表</a></li>
+						<li><a _href="admin-role.html" href="javascript:void(0)">角色管理</a></li>
+						<li><a _href="admin-permission.html"
+							href="javascript:void(0)">权限管理</a></li>
+					</ul>
+				</dd>
+			</dl>
 			<!--<dl id="menu-page">
 			<dt><i class="Hui-iconfont">&#xe626;</i> 页面管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 			<dd>
@@ -154,20 +171,7 @@
 			</dd>
 		</dl>-->
 
-			<dl id="menu-admin">
-				<dt>
-					<i class="Hui-iconfont">&#xe62d;</i> 管理员管理<i
-						class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i>
-				</dt>
-				<dd>
-					<ul>
-						<li><a _href="admin-role.html" href="javascript:void(0)">角色管理</a></li>
-						<li><a _href="admin-permission.html"
-							href="javascript:void(0)">权限管理</a></li>
-						<li><a _href="admin-list.html" href="javascript:void(0)">管理员列表</a></li>
-					</ul>
-				</dd>
-			</dl>
+
 			<dl id="menu-tongji">
 				<dt>
 					<i class="Hui-iconfont">&#xe61a;</i> 系统统计<i

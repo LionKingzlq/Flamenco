@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-	xmlns:context="http://www.springframework.org/schema/context"
-	xmlns:aop="http://www.springframework.org/schema/aop" 
-	xmlns:task="http://www.springframework.org/schema/task"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:task="http://www.springframework.org/schema/task"
 	xmlns:p="http://www.springframework.org/schema/p"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans 
 						http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
@@ -16,7 +14,7 @@
 	<task:annotation-driven />
 	<context:annotation-config />
 
-	<aop:aspectj-autoproxy proxy-target-class="true"/> 
+	<aop:aspectj-autoproxy proxy-target-class="true" />
 
 	<!-- 扫描annotation类，过滤Service，Repository -->
 	<context:component-scan base-package="com.flamenco">
@@ -27,13 +25,12 @@
 	</context:component-scan>
 
 	<!-- config DataSource c3p0 -->
-	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
-		destroy-method="close">
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
 		<property name="driverClass">
 			<value>com.mysql.jdbc.Driver</value>
 		</property>
 		<property name="jdbcUrl">
-			<value>jdbc:mysql://localhost:3306/flamenco?useUnicode=true&amp;characterEncoding=UTF-8</value>
+			<value>jdbc:mysql://localhost:3306/flamenco?useUnicode=true&amp;characterEncoding=utf-8</value>
 		</property>
 		<property name="user">
 			<value>root</value>
@@ -54,7 +51,7 @@
 			<value>20</value>
 		</property>
 	</bean>
-	
+
 	<bean id="sessionFactory"
 		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
@@ -70,13 +67,13 @@
 			</props>
 		</property>
 	</bean>
-	
+
 	<!-- 不破坏数据库,注册SessionFactory -->
 	<bean id="transactionManager"
 		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
-	
+
 	<bean id="transactionInterceptor"
 		class="org.springframework.transaction.interceptor.TransactionInterceptor">
 		<property name="transactionManager" ref="transactionManager"></property>
@@ -107,25 +104,28 @@
 			</list>
 		</property>
 	</bean>
-	
-	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
-      <property name="maxUploadSize" value="104857600"/>
-        <property name="maxInMemorySize" value="4096"/>
-   </bean>
-	
+
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="defaultEncoding" value="utf-8"/>
+		<property name="maxUploadSize" value="104857600" />
+		<property name="maxInMemorySize" value="4096" />
+	</bean>
+
 	<context:property-placeholder location="/WEB-INF/spring/redis.properties" />
-	
+
 	<bean id="poolConfig" class="redis.clients.jedis.JedisPoolConfig">
 		<property name="maxIdle" value="${redis.maxIdle}" />
- 		<property name="maxTotal" value="${redis.maxActive}"/>
+		<property name="maxTotal" value="${redis.maxActive}" />
 		<property name="maxWaitMillis" value="${redis.maxWait}" />
 		<property name="testOnBorrow" value="${redis.testOnBorrow}" />
 	</bean>
 
 	<bean id="connectionFactory"
 		class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory"
-		p:host-name="${redis.host}" p:port="${redis.port}" p:password="${redis.pass}" p:poolConfig-ref="poolConfig"/>
-		
+		p:host-name="${redis.host}" p:port="${redis.port}" p:password="${redis.pass}"
+		p:poolConfig-ref="poolConfig" />
+
 	<bean id="redisTemplate" class="org.springframework.data.redis.core.StringRedisTemplate">
 		<property name="connectionFactory" ref="connectionFactory" />
 	</bean>

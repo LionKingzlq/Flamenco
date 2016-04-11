@@ -56,7 +56,7 @@
 			<span class="l"><a href="javascript:;" onclick="datadel()"
 				class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i>
 					批量删除</a> <a class="btn btn-primary radius"
-				onclick="article_add('添加目录','res-catalog-add.html')"
+				onclick="article_add('添加目录','res-group-add.html')"
 				href="javascript:;"><i class="Hui-iconfont">&#xe600;</i> 添加目录</a></span> <span
 				class="r">共有数据：<strong>54</strong> 条
 			</span>
@@ -83,12 +83,12 @@
 	</div>
 	<div id="manager" style="display: none;">
 		<a style="text-decoration: none"
-			onClick="article_shenhe(this,'10001')" href="javascript:;" title="审核">审核</a>
+			onClick="article_shenhe(this,'iid')" href="javascript:;" title="审核">审核</a>
 		<a style="text-decoration: none" class="ml-5"
-			onClick="article_edit('资讯编辑','article-add.html','10001')"
+			onClick="article_edit('资讯编辑','teach-res-list.html?resGroupId=iid','iid')"
 			href="javascript:;" title="编辑"><i class="Hui-iconfont">&#xe6df;</i></a>
 		<a style="text-decoration: none" class="ml-5"
-			onClick="article_del(this,'10001')" href="javascript:;" title="删除"><i
+			onClick="article_del(this,'iid')" href="javascript:;" title="删除"><i
 			class="Hui-iconfont">&#xe6e2;</i></a>
 	</div>
 	<script type="text/javascript" src="lib/jquery/1.9.1/jquery.min.js"></script>
@@ -101,7 +101,7 @@
 	<script type="text/javascript">
 		$(function() {
 			$.ajax({
-						url : "/flamenco/resgroup/catalogListInPage",
+						url : "/flamenco/resgroup/resGroupListInPage",
 						data : "pageNum=1",
 						dataType : "json",
 						success : function(data) {
@@ -111,7 +111,7 @@
 								var tdSelect = "<td><input type='checkbox' value='1' name=''></td>";
 								var tdId = "<td>" + resGroup['id'] + "</td>";
 
-								var tdName = "<td><u style='cursor: pointer' class='text-primary' onclick='article_edit('查看','article-zhang.html',"
+								var tdName = "<td><u style='cursor: pointer' class='text-primary' onclick='article_edit('查看','teach-res-list.html?resGrouId='"+resGroup['id']+","
 										+ resGroup['id']
 										+ ")' title='查看'>"
 										+ resGroup['name'] + "</u></td>"
@@ -123,9 +123,10 @@
 										+ "</td>";
 								var tdManage = "<td class='td-manage'>"
 										+ $("#manager").html() + "</td>";
-								tdManage = tdManage.replace("$id",
+								
+								tdManage = tdManage.replace(/iid/g,
 										resGroup['id']);
-
+								
 								var tr = "<tr class='text-c'>" + tdSelect
 										+ tdId + tdName + tdTime
 										+ tdDescription + tdAdminId + tdManage
@@ -149,7 +150,7 @@
 		function article_edit(title, url, id, w, h) {
 			var index = layer.open({
 				type : 2,
-				title : title,
+				title : false,
 				content : url
 			});
 			layer.full(index);
@@ -157,8 +158,15 @@
 		/*资讯-删除*/
 		function article_del(obj, id) {
 			layer.confirm('确认要删除吗？', function(index) {
-				$(obj).parents("tr").remove();
-				layer.msg('已删除!', 1);
+				$.ajax({
+					url:"/flamenco/resgroup/deleteResGroup",
+					data:"catalogId="+id,
+					type:"GET",
+					success:function(){
+						$(obj).parents("tr").remove();
+					}
+				});
+				layer.close(index);
 			});
 		}
 	</script>
