@@ -6,7 +6,6 @@
 	xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:p="http://www.springframework.org/schema/p"
 	xsi:schemaLocation="http://www.springframework.org/schema/mvc 
-	
 		http://www.springframework.org/schema/mvc/spring-mvc.xsd
 		http://www.springframework.org/schema/beans 
 		http://www.springframework.org/schema/beans/spring-beans.xsd
@@ -30,7 +29,6 @@
 	<resources mapping="/temp/**" location="/res/temp/" />
 	<resources mapping="/template/**" location="/res/template/" />
 	<resources mapping="/*.html" location="/WEB-INF/views/" />
-	<resources mapping="/*.jsp" location="/WEB-INF/views/" />
 	
 
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources 

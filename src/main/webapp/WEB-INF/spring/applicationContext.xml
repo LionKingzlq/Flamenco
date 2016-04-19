@@ -108,12 +108,10 @@
 	<bean id="multipartResolver"
 		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
 		<property name="defaultEncoding" value="utf-8"/>
-		<property name="maxUploadSize" value="104857600" />
+		<property name="maxUploadSize" value="1088576000" />
 		<property name="maxInMemorySize" value="4096" />
 	</bean>
-
-	<context:property-placeholder location="/WEB-INF/spring/redis.properties" />
-
+	
 	<bean id="poolConfig" class="redis.clients.jedis.JedisPoolConfig">
 		<property name="maxIdle" value="${redis.maxIdle}" />
 		<property name="maxTotal" value="${redis.maxActive}" />
@@ -126,6 +124,7 @@
 		p:host-name="${redis.host}" p:port="${redis.port}" p:password="${redis.pass}"
 		p:poolConfig-ref="poolConfig" />
 
+	<context:property-placeholder location="/WEB-INF/spring/redis.properties" />
 	<bean id="redisTemplate" class="org.springframework.data.redis.core.StringRedisTemplate">
 		<property name="connectionFactory" ref="connectionFactory" />
 	</bean>

@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.flamenco.model.ResGroup;
 import com.flamenco.model.TeachRes;
 import com.flamenco.service.ITeachService;
 import com.flamenco.util.FileOperateUtil;

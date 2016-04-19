@@ -14,6 +14,7 @@ import java.util.Map;
 import javax.annotation.Resource;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.slf4j.Logger;
 import org.springframework.stereotype.Component;
@@ -61,6 +62,41 @@ public class FileOperateUtil {
 		return filePath;
 	}
 
+	/**
+	 * 
+	 * @param request
+	 * @throws IOException
+	 */
+	public boolean downLoadFile(String fileName, HttpServletRequest request, HttpServletResponse response) {
+
+		response.setCharacterEncoding("utf-8");
+		response.setContentType("multipart/form-data");
+		response.setHeader("Content-Disposition", "attachment;fileName=" + fileName);
+
+		try {
+			init(request);
+			
+			File file = new File(FILEDIR + getFileDir(fileName) + "/" + fileName);
+			if(!file.exists())
+				file = new File(FILEDIR + "/" + new String(fileName.getBytes("iso-8859-1"), "utf-8"));
+			
+			InputStream inputStream = new FileInputStream(new File(FILEDIR + getFileDir(fileName) + "/" + fileName));
+			OutputStream outputStream = response.getOutputStream();
+			byte[] b = new byte[2048];
+			int length;
+			while ((length = inputStream.read(b)) > 0) {
+				outputStream.write(b, 0, length);
+			}
+			outputStream.close();
+			inputStream.close();
+			return true;
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
+
 	private static String initFilePath(String name) {
 		String dir = getFileDir(name) + "";
 		File file = new File(FILEDIR + dir);
@@ -70,7 +106,7 @@ public class FileOperateUtil {
 		int num = 2;
 		String filePath = (file.getPath() + "/" + name).replaceAll(" ", "-");
 		File file2 = new File(filePath);
-		while(file2.exists()){
+		while (file2.exists()) {
 			filePath = (file.getPath() + "/" + num + name).replaceAll(" ", "-");
 			file2 = new File(filePath);
 			num++;
@@ -84,7 +120,8 @@ public class FileOperateUtil {
 
 	public static void download(String downloadfFileName, ServletOutputStream out) {
 		try {
-			FileInputStream in = new FileInputStream(new File(FILEDIR + "/" + downloadfFileName));
+			FileInputStream in = new FileInputStream(
+					new File(FILEDIR + getFileDir(downloadfFileName) + "/" + downloadfFileName));
 			write(in, out);
 		} catch (FileNotFoundException e) {
 			try {
@@ -119,7 +156,6 @@ public class FileOperateUtil {
 				out.close();
 			} catch (IOException ex) {
 			}
-			
 		}
 	}
 
@@ -128,10 +164,10 @@ public class FileOperateUtil {
 			FILEDIR = request.getSession().getServletContext().getRealPath("/") + "file/";
 		}
 	}
-	
+
 	public boolean deleteFile(String filePath) {
 		File file = new File(filePath);
-		if(file.exists()){
+		if (file.exists()) {
 			return file.delete();
 		}
 		return false;

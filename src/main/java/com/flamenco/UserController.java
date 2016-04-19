@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.io.UnsupportedEncodingException;
 import java.util.List;
 import java.util.Locale;
 
@@ -107,28 +108,14 @@ public class UserController {
 	}
 	
 	@RequestMapping(value = "download", method = RequestMethod.GET)
-	public String getResource(String fileName, HttpServletResponse response) {
-		String fileDir = "/Users/abraham/Documents/workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/Flamenco/file/12/";
-		
-		String filepath = Thread.currentThread().getContextClassLoader().getResource("").getPath();
-		System.out.println("filepath"+filepath);
-		response.setCharacterEncoding("utf-8");
-		response.setContentType("multipart/form-data");
-		response.setHeader("Content-Disposition", "attachment;fileName="+fileName);
-		
+	public String getResource(HttpServletRequest request, HttpServletResponse response) {
 		try {
-			InputStream inputStream = new FileInputStream(new File(fileDir + fileName));
-			OutputStream outputStream = response.getOutputStream();
-			byte[] b = new byte[2048];
-			int length;
-			while ((length = inputStream.read(b)) > 0) {
-				outputStream.write(b, 0, length);
-			}
-			outputStream.close();
-			inputStream.close();
-		} catch (Exception e) {
+			request.setCharacterEncoding("utf-8");
+		} catch (UnsupportedEncodingException e) {
 			e.printStackTrace();
 		}
+		String fileName = request.getParameter("fileName");
+		fileOperateUtil.downLoadFile(fileName, request, response);
 		return null;
 	}
 }

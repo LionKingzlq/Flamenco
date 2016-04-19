@@ -53,6 +53,7 @@
 			data : "catalogName="+catalogName+"&catalogDescription="+catalogDescription,
 			type:"POST",
 			success : function(data) {
+				parent.location.reload();
 				layer_close();
 			}
 		});

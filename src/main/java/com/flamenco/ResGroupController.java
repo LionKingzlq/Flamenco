@@ -32,6 +32,8 @@ public class ResGroupController {
 	public String GetFavoriteList(Locale locale, Model model) {
 		return "503";
 	}
+	
+	//添加分组
 	@RequestMapping(value="addResGroup", method=RequestMethod.POST)
 	public String addCatalog(String catalogName, String catalogDescription) {
 		
@@ -46,6 +48,19 @@ public class ResGroupController {
 		return "index";
 	}
 	
+	//获取分组列表
+	@ResponseBody
+	@RequestMapping(value="resGroupList", method=RequestMethod.GET)
+	public JSONObject getResGroupList() {
+		
+		List<ResGroup> resGroups = resGroupService.getAll();
+		JSONArray userArray = JSONArray.fromObject(resGroups);
+		JSONObject data = new JSONObject();
+		data.put("array", userArray);
+		return data;
+	}
+	
+	//分页刷新处理，占时用不到吧
 	@ResponseBody
 	@RequestMapping(value="resGroupListInPage", method=RequestMethod.GET)
 	public JSONObject getCatalogList(int pageNum) {
@@ -59,14 +74,15 @@ public class ResGroupController {
 	
 	@ResponseBody
 	@RequestMapping(value="deleteResGroup", method=RequestMethod.GET)
-	public JSONObject deleteCatalog(int catalogId) {
+	public JSONObject deleteCatalog(int resGroupId) {
 		ResGroup resGroup = new ResGroup();
-		resGroup.setId(catalogId);
+		resGroup.setId(resGroupId);
 		JSONObject data = new JSONObject();
 		data.put("result",resGroupService.delete(resGroup));
 		return data;
 	}
 	
+	//获取单个分组的信息
 	@ResponseBody
 	@RequestMapping(value="getResGroup", method=RequestMethod.GET)
 	public JSONObject getResGroup(int resGroupId) {
