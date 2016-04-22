@@ -1,2 +1,0 @@
-2016-01-01 17:58:02 [http-bio-8080-exec-5:21910] - [WARN]  SQL Error: 0, SQLState: S0022
-2016-01-01 17:58:02 [http-bio-8080-exec-5:21912] - [ERROR]  Column 'address' not found.
