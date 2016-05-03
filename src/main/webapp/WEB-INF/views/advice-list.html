@@ -20,12 +20,12 @@
 <script type="text/javascript" src="http://lib.h-ui.net/DD_belatedPNG_0.0.8a-min.js" ></script>
 <script>DD_belatedPNG.fix('*');</script>
 <![endif]-->
-<title>用户管理</title>
+<title>意见反馈</title>
 </head>
 <body>
 	<nav class="breadcrumb">
 		<i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span>
-		用户中心 <span class="c-gray en">&gt;</span> 用户管理 <a
+		评论管理 <span class="c-gray en">&gt;</span> 意见反馈 <a
 			class="btn btn-success radius r mr-20"
 			style="line-height: 1.6em; margin-top: 3px"
 			href="javascript:location.replace(location.href);" title="刷新"><i
@@ -40,19 +40,15 @@
 				onfocus="WdatePicker({minDate:'#F{$dp.$D(\'datemin\')}',maxDate:'%y-%M-%d'})"
 				id="datemax" class="input-text Wdate" style="width: 120px;">
 			<input type="text" class="input-text" style="width: 250px"
-				placeholder="输入会员名称、电话、邮箱" id="" name="">
+				placeholder="输入关键词" id="" name="">
 			<button type="submit" class="btn btn-success radius" id="" name="">
-				<i class="Hui-iconfont">&#xe665;</i> 搜用户
+				<i class="Hui-iconfont">&#xe665;</i> 搜意见
 			</button>
 		</div>
 		<div class="cl pd-5 bg-1 bk-gray mt-20">
-			<span class="l"> <a href="javascript:;" onclick="datadel()"
+			<span class="l"><a href="javascript:;" onclick="datadel()"
 				class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i>
-					批量删除</a> <a href="javascript:;"
-				onclick="member_add('批量添加','member-add-list.html','','510')"
-				class="btn btn-primary radius"><i class="Hui-iconfont">&#xe600;</i>
-					批量添加</a>
-			</span> <span class="r">共有数据：<strong>88</strong> 条
+					批量删除</a> </span> <span class="r">共有数据：<strong>88</strong> 条
 			</span>
 		</div>
 		<div class="mt-20">
@@ -61,13 +57,10 @@
 				<thead>
 					<tr class="text-c">
 						<th width="25"><input type="checkbox" name="" value=""></th>
-						<th width="80">ID</th>
-						<th width="100">用户名</th>
-						<th width="40">性别</th>
-						<th width="90">手机</th>
-						<th width="150">密码</th>
-						<th width="">地址</th>
-						<th width="130">加入时间</th>
+						<th width="60">ID</th>
+						<th width="60">用户名</th>
+						<th>留言内容</th>
+						<th width="120">添加时间</th>
 						<th width="100">操作</th>
 					</tr>
 				</thead>
@@ -77,70 +70,59 @@
 		</div>
 	</div>
 	<div id="manager" style="display: none;">
-		<td class="td-manage"><a style="text-decoration: none"
-			class="ml-5"
-			onClick="change_password('修改密码','change-password.html','iid','600','270')"
-			href="javascript:;" title="修改密码"><i class="Hui-iconfont">&#xe63f;</i></a>
-			<a title="删除" href="javascript:;" onclick="member_del(this,'iid')"
+		<a title="编辑" href="javascript:;"
+			onclick="admin_edit('管理员编辑','admin-add.html','$id','800','500')"
+			class="ml-5" style="text-decoration: none"> <i
+			class="Hui-iconfont">&#xe6df;</i>
+		</a> <a title="删除" href="javascript:;" onclick="admin_del(this,'1')"
 			class="ml-5" style="text-decoration: none"><i
-				class="Hui-iconfont">&#xe6e2;</i></a></td>
+			class="Hui-iconfont">&#xe6e2;</i> </a>
 	</div>
 	<script type="text/javascript" src="lib/jquery/1.9.1/jquery.min.js"></script>
 	<script type="text/javascript" src="lib/layer/1.9.3/layer.js"></script>
 	<script type="text/javascript" src="lib/laypage/1.2/laypage.js"></script>
 	<script type="text/javascript" src="lib/My97DatePicker/WdatePicker.js"></script>
+	<script type="text/javascript"
+		src="lib/datatables/1.10.0/jquery.dataTables.min.js"></script>
 	<script type="text/javascript" src="js/H-ui.js"></script>
 	<script type="text/javascript" src="js/H-ui.admin.js"></script>
 	<script type="text/javascript">
 		$(function() {
 			$
 					.ajax({
-						url : "/flamenco/user/usersInPage",
-						data : "pageNum=1",
+						url : "/flamenco/advice/advicesInPage",
+						data : "pageNum=0",
 						dataType : "json",
 						success : function(data) {
-							var users = data['array'];
-							for (x in users) {
-								var user = users[x];
+							var advices = data['array'];
+							for (x in advices) {
+								var advice = advices[x];
+								var tdSelect = "<td><input type='checkbox' value='"+ x +"' name=''></td>";
+								var tdId = "<td>" + advice['id'] + "</td>";
+								var tdUser = "<td>" + advice['userName']
+										+ "</td>"
+								var tdContent = "<td>" + advice['content']
+										+ "</td>";
+								var tdAddTime = "<td>" + advice['addTime']
+										+ "</td>";
 
-								var tdSelect = "<td><input type='checkbox' value='1' name=''></td>";
-								var tdId = "<td>" + user['id'] + "</td>";
-
-								var tdName = "<td><u style='cursor: pointer' class='text-primary' onclick=\"member_show('"
-										+ user['name']
-										+ "','member-show.html','10001','360','400')\">"
-										+ user['name'] + "</u></td>"
-								var tdGender;
-								if (user['gender']) {
-									tdGender = "<td>男</td>";
-								} else {
-									tdGender = "<td>男</td>";
-								}
-								var tdPhone = "<td>" + user['phone'] + "</td>";
-								var tdPassword = "<td>" + user['password']
-										+ "</td>";
-								var tdAddress = "<td>" + user['address']
-										+ "</td>";
-								var tdTime = "<td>" + user['starttime']
-										+ "</td>";
 								var tdManage = "<td class='td-manage'>"
 										+ $("#manager").html() + "</td>";
-								tdManage = tdManage.replace(/iid/g, user['id']);
-
+								tdManage = tdManage.replace(/iid/g,
+										advice['adviceId']);
 								var tr = "<tr class='text-c'>" + tdSelect
-										+ tdId + tdName + tdGender + tdPhone
-										+ tdPassword + tdAddress + tdTime
+										+ tdId + tdUser + tdContent + tdAddTime
 										+ tdManage + "</tr>";
-								$(".table-sort tbody").append(tr);
+								$(".table tbody").append(tr);
 							}
-
 						}
 					});
+
 			$('.table-sort tbody').on('click', 'tr', function() {
 				if ($(this).hasClass('selected')) {
 					$(this).removeClass('selected');
 				} else {
-					/* table. */$('tr.selected').removeClass('selected');
+					table.$('tr.selected').removeClass('selected');
 					$(this).addClass('selected');
 				}
 			});
@@ -206,23 +188,18 @@
 		}
 		/*密码-修改*/
 		function change_password(title, url, id, w, h) {
-			layer_show(title, url + "?userId=" + id, w, h);
+			layer_show(title, url, w, h);
 		}
 		/*用户-删除*/
 		function member_del(obj, id) {
 			layer.confirm('确认要删除吗？', function(index) {
-				$.ajax({
-					url : "/flamenco/user/deleteUser",
-					data : "userId=" + id,
-					type : "GET",
-					success : function() {
-						$(obj).parents("tr").remove();
-					}
+				$(obj).parents("tr").remove();
+				layer.msg('已删除!', {
+					icon : 1,
+					time : 1000
 				});
-				layer.close(index);
 			});
 		}
 	</script>
-	<div id="test"></div>
 </body>
 </html>

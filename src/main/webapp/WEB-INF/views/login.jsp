@@ -19,32 +19,53 @@
 <script type="text/javascript" src="http://lib.h-ui.net/DD_belatedPNG_0.0.8a-min.js" ></script>
 <script>DD_belatedPNG.fix('*');</script>
 <![endif]-->
-<title>后台登录 - H-ui.admin v2.3</title>
+<title>栋栋力后台登录</title>
 <meta name="keywords" content="H-ui.admin v2.3,H-ui网站后台模版,后台模版下载,后台管理系统模版,HTML后台模版下载">
 <meta name="description" content="H-ui.admin v2.3，是一款由国人开发的轻量级扁平化网站后台模板，完全免费开源的网站后台管理系统模版，适合中小型CMS后台系统。">
+<script type="text/javascript">
+	function login(){
+		var name = $("#name").val();
+		var passWord = $("#passWord").val();
+		$.ajax({
+			url:"/flamenco/admin/login",
+			type:"POST",
+			data:"name="+name+"&passWord="+passWord,
+			success:function(data){
+				if(data.result != 0){
+					$.cookie("adminId", data.result);
+					window.location.href="/flamenco/admin/index";
+				}else{
+					alert("用户名或密码错误");
+				}
+			},
+			error:function(data){
+				if(data.result){
+					alert("用户名或密码错误");
+				}else{
+					alert("用户名或密码错误");
+				}
+			}
+		})
+	}
+</script>
 </head>
 <body>
 <input type="hidden" id="TenantId" name="TenantId" value="" />
-<div class="header"></div>
+<div class="header">栋栋力后台数据管理系统</div>
 <div class="loginWraper">
   <div id="loginform" class="loginBox">
-    <form class="form form-horizontal" action="index.html" method="post">
+    <form class="form form-horizontal" action="/ddl/admin/login" method="post">
       <div class="row cl">
         <label class="form-label col-3"><i class="Hui-iconfont">&#xe60d;</i></label>
         <div class="formControls col-8">
-          <input id="" name="" type="text" placeholder="账户" class="input-text size-L">
+          <input id="name" name="name" type="text" placeholder="账户" class="input-text size-L">
         </div>
       </div>
       <div class="row cl">
         <label class="form-label col-3"><i class="Hui-iconfont">&#xe60e;</i></label>
         <div class="formControls col-8">
-          <input id="" name="" type="password" placeholder="密码" class="input-text size-L">
+          <input id="passWord" name="passWord" type="password" placeholder="密码" class="input-text size-L">
         </div>
-      </div>
-      <div class="row cl">
-        <div class="formControls col-8 col-offset-3">
-          <input class="input-text size-L" type="text" placeholder="验证码" onblur="if(this.value==''){this.value='验证码:'}" onclick="if(this.value=='验证码:'){this.value='';}" value="验证码:" style="width:150px;">
-          <img src="images/VerifyCode.aspx.png"> <a id="kanbuq" href="javascript:;">看不清，换一张</a> </div>
       </div>
       <div class="row">
         <div class="formControls col-8 col-offset-3">
@@ -55,26 +76,16 @@
       </div>
       <div class="row">
         <div class="formControls col-8 col-offset-3">
-          <input name="" type="submit" class="btn btn-success radius size-L" value="&nbsp;登&nbsp;&nbsp;&nbsp;&nbsp;录&nbsp;">
+          <input name="" type="Button" class="btn btn-success radius size-L" onclick="login();" value="&nbsp;登&nbsp;&nbsp;&nbsp;&nbsp;录&nbsp;">
           <input name="" type="reset" class="btn btn-default radius size-L" value="&nbsp;取&nbsp;&nbsp;&nbsp;&nbsp;消&nbsp;">
         </div>
       </div>
     </form>
   </div>
 </div>
-<div class="footer">Copyright 你的公司名称 by H-ui.admin.v2.3</div>
+<div class="footer">Copyright 栋栋力教育培训机构</div>
 <script type="text/javascript" src="lib/jquery/1.9.1/jquery.min.js"></script> 
-<script type="text/javascript" src="js/H-ui.js"></script> 
-<script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "//hm.baidu.com/hm.js?080836300300be57b7f34f4b3e97d911";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
-var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F080836300300be57b7f34f4b3e97d911' type='text/javascript'%3E%3C/script%3E"));
-</script>
+<script type="text/javascript" src="lib/jquery/1.9.1/jquery.cookie.js"></script> 
+<script type="text/javascript" src="js/H-ui.js"></script>
 </body>
 </html>

@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Locale;
 
 import javax.annotation.Resource;
+import javax.persistence.criteria.Path;
 import javax.servlet.http.HttpServletRequest;
 
 import org.slf4j.Logger;
@@ -62,6 +63,8 @@ public class TeachResController {
 	@RequestMapping(value="teachResList", method=RequestMethod.GET)
 	public JSONObject getTeachResList(int resGroupId) {
 		
+		teachService.save(new TeachRes());
+		
 		List<TeachRes> teachReses = teachService.getAll(resGroupId);
 		JSONArray userArray = JSONArray.fromObject(teachReses);
 		JSONObject data = new JSONObject();
@@ -77,7 +80,23 @@ public class TeachResController {
 		teachRes.setId(teachResId);
 		boolean flag = teachService.delete(teachRes);
 		JSONObject data = new JSONObject();
-		data.put("result", flag);
+		data.put("flag", flag);
 		return data;
 	}
+	
+	@ResponseBody
+	@RequestMapping(value = "upload")
+	public JSONObject upload(HttpServletRequest request) {
+		JSONObject result = new JSONObject();
+		try {
+			request.setCharacterEncoding("utf-8");
+			String filePath = fileOperateUtil.upLoadFile(request,false);
+			result.put("result", filePath);
+		} catch (Exception e) {
+			result.put("result", "error");
+		}
+		return result;
+	}
+	
+	
 }

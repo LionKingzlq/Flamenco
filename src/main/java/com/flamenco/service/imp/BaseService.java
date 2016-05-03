@@ -51,7 +51,7 @@ public abstract class BaseService implements IBaseService {
 			session.getTransaction().commit();
 			return true;
 		} catch (Exception e) {
-
+			System.out.println("keyword:delete:" + e.getMessage());
 		}
 		return false;
 	}

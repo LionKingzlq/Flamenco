@@ -24,15 +24,18 @@ public class ResGroup {
 	@Column(name="name")
 	private String name;
 	
-	@Column(name="startTime")
-	private Date startTime;
-	
 	@Column(name="description")
 	private String description;
 
 	@Column(name="adminId")
 	private int adminId;
 
+	@Column(name="adminName")
+	private String adminName;
+	
+	@Column(name="startTime")
+	private Date startTime;
+	
 	public void setStartTime(Date startTime) {
 		this.startTime = startTime;
 	}
@@ -44,6 +47,19 @@ public class ResGroup {
 	public void setAdminId(int adminId) {
 		this.adminId = adminId;
 	}
+	
+	public String getAdminName() {
+		return adminName;
+	}
+
+	public void setAdminName(String adminName) {
+		this.adminName = adminName;
+	}
+
+	public Date getStartTime() {
+		return startTime;
+	}
+
 	public ResGroup(){
 		
 	}

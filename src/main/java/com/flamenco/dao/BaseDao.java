@@ -71,4 +71,5 @@ public class BaseDao extends DaoSupport {
 	public final HibernateTemplate getHibernateTemplate() {
 		return this.hibernateTemplate;
 	}
+	
 }

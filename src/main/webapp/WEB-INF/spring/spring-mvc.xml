@@ -21,6 +21,9 @@
 	<context:component-scan base-package="com.flamenco" />
 
 	<resources mapping="/res/**" location="/res/" />
+	<resources mapping="/admin/*.html" location="/WEB-INF/views/" />
+	<resources mapping="/admin/**" location="/res/" />
+	
 	<resources mapping="/css/**" location="/res/css/" />
 	<resources mapping="/images/**" location="/res/images/" />
 	<resources mapping="/js/**" location="/res/js/" />
@@ -28,9 +31,11 @@
 	<resources mapping="/skin/**" location="/res/skin/" />
 	<resources mapping="/temp/**" location="/res/temp/" />
 	<resources mapping="/template/**" location="/res/template/" />
+	<resources mapping="/upload/**" location="/res/upload/" />
 	<resources mapping="/*.html" location="/WEB-INF/views/" />
 	
-
+	
+	
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources 
 		in the /WEB-INF/views directory -->
 	<beans:bean
@@ -53,5 +58,16 @@
 			</beans:list>
 		</beans:property>
 	</beans:bean>
+	
+		<!--配置拦截器, 多个拦截器,顺序执行 -->  
+<interceptors>    
+    <interceptor>
+        <!-- 匹配的是url路径， 如果不配置或/**,将拦截所有的Controller， 如果是/admin/** 便是admin的子路也会拦截，否则至拦截admin/下的-->
+        <mapping path="/admin/*" />
+        <beans:bean class="com.flamenco.filter.CheckInterceptor"></beans:bean>    
+    </interceptor>
+    <!-- 当设置多个拦截器时，先按顺序调用preHandle方法，然后逆序调用每个拦截器的postHandle和afterCompletion方法 -->  
+</interceptors> 
+
 </beans:beans>
 

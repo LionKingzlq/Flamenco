@@ -4,6 +4,8 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import com.flamenco.dao.TeachResDao;
@@ -14,6 +16,8 @@ import com.flamenco.util.FileOperateUtil;
 @Service(value="teachService")
 public class TeachResService extends BaseService implements ITeachService {
 
+	private static final Logger logger = LoggerFactory.getLogger(BaseService.class);
+	
 	@Resource
 	private TeachResDao teachResDao;
 	@Resource
@@ -27,7 +31,11 @@ public class TeachResService extends BaseService implements ITeachService {
 	@Override
 	public boolean delete(Object object) {
 		TeachRes teachRes = (TeachRes)teachResDao.get((TeachRes)object);
-		return fileOperateUtil.deleteFile(teachRes.getContent());
+		boolean flag = fileOperateUtil.deleteFile(teachRes.getContent());
+		if(flag){
+			return teachResDao.delete(teachRes);
+		}
+		return false; 
 	}
 	public List getAll(int resGroupId) {
 		return teachResDao.getAll(resGroupId);
@@ -36,6 +44,11 @@ public class TeachResService extends BaseService implements ITeachService {
 	@Override
 	public List getAll() {
 		return null;
+	}
+	
+	@Override
+	public boolean save(Object object) {
+		return teachResDao.save((TeachRes)object);
 	}
 
 }

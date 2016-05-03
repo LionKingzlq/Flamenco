@@ -7,7 +7,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.util.Date;
+import java.io.UnsupportedEncodingException;
 import java.util.Iterator;
 import java.util.Map;
 
@@ -16,7 +16,6 @@ import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.slf4j.Logger;
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
@@ -76,11 +75,14 @@ public class FileOperateUtil {
 		try {
 			init(request);
 			
-			File file = new File(FILEDIR + getFileDir(fileName) + "/" + fileName);
+			File file = new File(FILEDIR  + "/" + fileName);
 			if(!file.exists())
-				file = new File(FILEDIR + "/" + new String(fileName.getBytes("iso-8859-1"), "utf-8"));
-			
-			InputStream inputStream = new FileInputStream(new File(FILEDIR + getFileDir(fileName) + "/" + fileName));
+				file = new File(FILEDIR + new String(fileName.getBytes("iso-8859-1"), "utf-8"));
+			if(!file.exists())
+			{
+				return false;
+			}
+			InputStream inputStream = new FileInputStream(file);
 			OutputStream outputStream = response.getOutputStream();
 			byte[] b = new byte[2048];
 			int length;
@@ -98,8 +100,7 @@ public class FileOperateUtil {
 	}
 
 	private static String initFilePath(String name) {
-		String dir = getFileDir(name) + "";
-		File file = new File(FILEDIR + dir);
+		File file = new File(FILEDIR);
 		if (!file.exists()) {
 			file.mkdir();
 		}
@@ -114,14 +115,10 @@ public class FileOperateUtil {
 		return filePath;
 	}
 
-	private static int getFileDir(String name) {
-		return name.hashCode() & 0xf;
-	}
-
 	public static void download(String downloadfFileName, ServletOutputStream out) {
 		try {
 			FileInputStream in = new FileInputStream(
-					new File(FILEDIR + getFileDir(downloadfFileName) + "/" + downloadfFileName));
+					new File(FILEDIR + "/" + downloadfFileName));
 			write(in, out);
 		} catch (FileNotFoundException e) {
 			try {
@@ -159,17 +156,23 @@ public class FileOperateUtil {
 		}
 	}
 
-	private static void init(HttpServletRequest request) {
+	public static void init(HttpServletRequest request) {
 		if (FILEDIR == null) {
-			FILEDIR = request.getSession().getServletContext().getRealPath("/") + "file/";
+			FILEDIR = request.getSession().getServletContext().getRealPath("/") + "res/upload/";
 		}
 	}
 
-	public boolean deleteFile(String filePath) {
-		File file = new File(filePath);
+	public boolean deleteFile(String fileName) {
+		File file = new File(FILEDIR + "/" + fileName);
+		if(!file.exists())
+			try {
+				file = new File(FILEDIR + "/" + new String(fileName.getBytes("iso-8859-1"), "utf-8"));
+			} catch (UnsupportedEncodingException e) {
+				e.printStackTrace();
+			}
 		if (file.exists()) {
 			return file.delete();
 		}
-		return false;
+		return true;
 	}
 }

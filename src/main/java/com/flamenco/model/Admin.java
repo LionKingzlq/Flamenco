@@ -12,21 +12,20 @@ import javax.persistence.Table;
 import com.flamenco.util.FormatUtil;
 
 @Entity
-@Table(name="admin")
+@Table(name="name")
 public class Admin {
 
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name="adminId")
-	private int adminId;
+    @Column(name="id")
+	private int id;
 	
-	@Column(name="admin")
-	private String admin;
+	@Column(name="name")
+	private String name;
 	
 	@Column(name="passWord")
 	private String passWord;
-	
 	
 	@Column(name="roleType")
 	private int roleType;
@@ -37,17 +36,17 @@ public class Admin {
 	@Column(name="flag")
 	private boolean flag;
 	
-	public int getAdminId() {
-		return adminId;
+	public int getId() {
+		return id;
 	}
-	public void setAdminId(int adminId) {
-		this.adminId = adminId;
+	public void setId(int id) {
+		this.id = id;
 	}
-	public String getAdmin() {
-		return admin;
+	public String getName() {
+		return name;
 	}
-	public void setAdmin(String admin) {
-		this.admin = admin;
+	public void setName(String name) {
+		this.name = name;
 	}
 	public String getPassWord() {
 		return passWord;

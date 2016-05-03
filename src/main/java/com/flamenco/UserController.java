@@ -43,6 +43,13 @@ public class UserController {
 	}
 
 	@ResponseBody
+	@RequestMapping(value = "get", method = RequestMethod.GET)
+	public JSONObject get(User user) {
+		User result = (User)userService.get(user);
+		return JSONObject.fromObject(result);
+	}
+	
+	@ResponseBody
 	@RequestMapping(value = "usersInPage", method = RequestMethod.GET)
 	public JSONObject GetUserList(int pageNum) {
 		System.out.println("pageNUm:" + pageNum);
@@ -95,15 +102,11 @@ public class UserController {
 	}
 	
 	@ResponseBody
-	@RequestMapping(value = "modify", method = RequestMethod.POST, headers={"content-type=application/json", "content-type=application/xml"})
-	public JSONObject modify(@RequestBody User user) {
+	@RequestMapping(value = "modify", method = RequestMethod.POST)
+	public JSONObject modify(User user) {
 		Boolean falg = userService.modify(user);
 		JSONObject result = new JSONObject();
-		if(falg){
-			result.put("code", 200);
-		}else {
-			result.put("code", 404);			
-		}
+		result.put("flag", falg);
 		return result;
 	}
 	
@@ -117,5 +120,16 @@ public class UserController {
 		String fileName = request.getParameter("fileName");
 		fileOperateUtil.downLoadFile(fileName, request, response);
 		return null;
+	}
+	
+	@RequestMapping(value = "play", method = RequestMethod.GET)
+	public void play(HttpServletRequest request, HttpServletResponse response) {
+		try {
+			request.setCharacterEncoding("utf-8");
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
+		}
+		String fileName = request.getParameter("fileName");
+		fileOperateUtil.downLoadFile(fileName, request, response);
 	}
 }

@@ -27,5 +27,11 @@ public class FavoriteService extends BaseService implements IFavoriteService{
 		return null;
 	}
 
+	@Override
+	public boolean save(Object object) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 	
 }

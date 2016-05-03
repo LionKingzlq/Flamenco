@@ -33,6 +33,7 @@ public class UserInfoDao extends BaseDao {
 		}
 		return null;
 	}
+	
 	public User check(User user) {
 		try {
 			Session session = getSession();
@@ -46,5 +47,4 @@ public class UserInfoDao extends BaseDao {
 		}
 		return null;
 	}
-	
 }

@@ -89,7 +89,7 @@ public class ResGroupController {
 		ResGroup resGroup = new ResGroup();
 		resGroup.setId(resGroupId);
 		JSONObject data = new JSONObject();
-		data.put("data",resGroupService.get(resGroup));
+		data.put("data",(ResGroup)resGroupService.get(resGroup));
 		return data;
 	}
 }

@@ -8,7 +8,9 @@ import java.util.Locale;
 import java.util.Map;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -29,6 +31,7 @@ import com.flamenco.service.IResGroupService;
 import com.flamenco.service.ISetService;
 import com.flamenco.service.ITeachService;
 import com.flamenco.service.IUserService;
+import com.flamenco.util.FileOperateUtil;
 
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
@@ -37,6 +40,7 @@ import net.sf.json.JSONObject;
  * Handles requests for the application home page.
  */
 @Controller
+@RequestMapping(value="/admin")
 public class AdminController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(AdminController.class);
@@ -59,19 +63,24 @@ public class AdminController {
 	 * Simply selects the home view to render by returning its name.
 	 */
 	@RequestMapping(value = "", method = RequestMethod.GET)
-	public String home(Locale locale, Model model) {
-		
-		logger.debug("Welcome home! The client locale is {}.", locale);
-		
-		Date date = new Date();
-		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
-		
-		String formattedDate = dateFormat.format(date);
-		teachService.getAll();
-		favoriteService.getAll();
-		model.addAttribute("serverTime", formattedDate );
-		
+	public String home(HttpServletRequest request) {
+		FileOperateUtil.init(request);
+		return "login";
+	}
+	
+	@RequestMapping(value="index")
+	public String Index(){
 		return "index";
+	}
+	
+	@ResponseBody
+	@RequestMapping(value="/login",method = RequestMethod.POST)
+	public JSONObject check(Model model, Admin admin, HttpSession session){
+		JSONObject result = new JSONObject();
+		int adminId = adminService.checkAdmin(admin);
+		result.put("result", adminId);
+		session.setAttribute("adminId", adminId);
+		return result;
 	}
 	
 	@RequestMapping(value="json")
@@ -86,19 +95,6 @@ public class AdminController {
 		map.put("id", 1);
 		map.put("flag", true);
 		return map;
-	}
-	
-	@RequestMapping(value="login", method=RequestMethod.POST)
-	public String test(Locale locale, Model model, Admin admin){
-		
-		if (adminService.checkAdmin(admin)) {
-			
-			model.addAttribute("adminList", adminService.getAll());
-			model.addAttribute("resGroupList",resGroupService.getAll());
-			model.addAttribute("userList", userService.getAll());
-			return "home";
-		}
-		return "404";
 	}
 	
 	@Resource(name="setService")

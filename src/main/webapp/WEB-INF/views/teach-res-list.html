@@ -24,8 +24,16 @@
 <title>目录列表</title>
 </head>
 <body>
+	<nav class="breadcrumb">
+		<i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span>
+		资源管理 <span class="c-gray en">&gt;</span> 目录列表 <span class="c-gray en">&gt;</span>
+		资源列表 <a class="btn btn-success radius r mr-20"
+			style="line-height: 1.6em; margin-top: 3px"
+			href="javascript:location.replace(location.href);" title="刷新"><i
+			class="Hui-iconfont">&#xe68f;</i></a>
+	</nav>
 	<div class="pd-20">
-		<div class="pd-20">
+		<div>
 			<form class="form form-horizontal">
 				<div class="row cl">
 					<label class="form-label col-2"><span class="c-red">*</span>描述：</label>
@@ -90,9 +98,7 @@
 		</div>
 	</div>
 	<div id="manager" style="display: none;">
-		<a style="text-decoration: none" onClick="article_shenhe(this,'iid')"
-			href="javascript:;" title="审核">审核</a> <a
-			style="text-decoration: none" class="ml-5"
+		<a style="text-decoration: none" class="ml-5"
 			onClick="article_edit('资讯编辑','article-add.html','iid')"
 			href="javascript:;" title="编辑"><i class="Hui-iconfont">&#xe6df;</i></a>
 		<a style="text-decoration: none" class="ml-5"
@@ -131,49 +137,51 @@
 				dataType : "json",
 				success : function(data) {
 					var resGroup = data['data'];
-					$("#resGroupId").val(resGroup['id']);
+					$("#resGroupId").val(resGroup["id"]);
 					$("#resGroupName").val(resGroup['name']);
 					$("#resGroupDescription").val(resGroup['description']);
 				}
 			});
-			
-			$.ajax({
-				url : "/flamenco/teachres/teachResList",
-				data : "resGroupId=" + getArgs("resGroupId"),
-				dataType : "json",
-				
-				success : function(data) {
-					var teachReses = data['array'];
-					for (x in teachReses) {
-						var teachRes = teachReses[x];
-						var tdSelect = "<td><input type='checkbox' value='1' name=''></td>";
-						var tdId = "<td>" + teachRes['id'] + "</td>";
 
-						var tdName = "<td><u style='cursor: pointer' class='text-primary' onclick='article_edit('查看','teach-res-list.html?resGrouId='"+teachRes['id']+","
-								+ teachRes['id']
-								+ ")' title='查看'>"
-								+ teachRes['content'] + "</u></td>"
-						var tdTime = "<td>" + teachRes['starttime']
-								+ "</td>";
-						var tdDifficulty = "<td>" + teachRes['difficulty']
-								+ "</td>";
-						
-						var tdAdminId = "<td>" + teachRes['adminId']
-								+ "</td>";
-						var tdManage = "<td class='td-manage'>"
-								+ $("#manager").html() + "</td>";
-						
-						tdManage = tdManage.replace(/iid/g,
-								teachRes['id']);
-						
-						var tr = "<tr class='text-c'>" + tdSelect
-								+ tdId + tdName + tdTime
-								+ tdDifficulty + tdAdminId + tdManage
-								+ "</tr>";
-						$(".table-sort tbody").append(tr);
-					}
-				}
-			});
+			$
+					.ajax({
+						url : "/flamenco/teachres/teachResList",
+						data : "resGroupId=" + getArgs("resGroupId"),
+						dataType : "json",
+
+						success : function(data) {
+							var teachReses = data['array'];
+							for (x in teachReses) {
+								var teachRes = teachReses[x];
+								var tdSelect = "<td><input type='checkbox' value='1' name=''></td>";
+								var tdId = "<td>" + teachRes['id'] + "</td>";
+
+								var tdName = "<td><u style='cursor: pointer' class='text-primary' onclick='article_edit('查看','teach-res-list.html?resGrouId='"
+										+ teachRes['id']
+										+ ","
+										+ teachRes['id']
+										+ ")' title='查看'>"
+										+ teachRes['content'] + "</u></td>"
+								var tdTime = "<td>" + teachRes['addTime']
+										+ "</td>";
+								var tdDifficulty = "<td>"
+										+ teachRes['difficulty'] + "</td>";
+
+								var tdAdmin = "<td>" + teachRes['adminName']
+										+ "</td>";
+								var tdManage = "<td class='td-manage'>"
+										+ $("#manager").html() + "</td>";
+
+								tdManage = tdManage.replace(/iid/g,
+										teachRes['id']);
+
+								var tr = "<tr class='text-c'>" + tdSelect
+										+ tdId + tdName + tdTime + tdDifficulty
+										+ tdAdmin + tdManage + "</tr>";
+								$(".table-sort tbody").append(tr);
+							}
+						}
+					});
 		});
 
 		/*资讯-添加*/
@@ -181,7 +189,7 @@
 			var index = layer.open({
 				type : 2,
 				title : title,
-				content : url+"?resGroupId=" + getArgs("resGroupId")
+				content : url + "?resGroupId=" + getArgs("resGroupId")
 			});
 			layer.full(index);
 		}
@@ -201,7 +209,9 @@
 					url : "/flamenco/teachres/deleteTeachRes",
 					data : "teachResId=" + id,
 					type : "GET",
-					success : function() {
+					datatype:"json",
+					success : function(data) {
+						if(data.flag)
 						$(obj).parents("tr").remove();
 					}
 				});

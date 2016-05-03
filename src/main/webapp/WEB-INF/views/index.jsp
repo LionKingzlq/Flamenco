@@ -93,12 +93,8 @@
 				</dt>
 				<dd>
 					<ul>
-						<li><a _href="res-group-list.html"
-							href="javascript:void(0)">目录管理</a></li>
-						<li><a _href="res-group-list.html"
-							href="javascript:void(0)">讲义管理</a></li>
-						<li><a _href="res-group-list.html"
-							href="javascript:void(0)">作业管理</a></li>
+						<li><a _href="res-group-list.html" href="javascript:void(0)">目录管理</a></li>
+						<li><a _href="home.html" href="javascript:void(0)">目录管理</a></li>
 					</ul>
 				</dd>
 			</dl>
@@ -111,16 +107,6 @@
 				<dd>
 					<ul>
 						<li><a _href="member-list.html" href="javascript:;">用户列表</a></li>
-						<li><a _href="member-add-list.html" href="javascript:;">用户批量添加</a></li>
-						<li><a _href="member-del.html" href="javascript:;">删除的用户</a></li>
-						<li><a _href="member-level.html" href="javascript:;">等级管理</a></li>
-						<li><a _href="member-scoreoperation.html" href="javascript:;">积分管理</a></li>
-						<li><a _href="member-record-browse.html"
-							href="javascript:void(0)">浏览记录</a></li>
-						<li><a _href="member-record-download.html"
-							href="javascript:void(0)">下载记录</a></li>
-						<li><a _href="member-record-share.html"
-							href="javascript:void(0)">分享记录</a></li>
 					</ul>
 				</dd>
 			</dl>
@@ -149,14 +135,15 @@
 		</dl>-->
 			<dl id="menu-comments">
 				<dt>
-					<i class="Hui-iconfont">&#xe622;</i> 评论管理<i
+					<i class="Hui-iconfont">&#xe622;</i> 意见反馈<i
 						class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i>
 				</dt>
 				<dd>
 					<ul>
+						<li><a _href="advice-list.html" href="javascript:void(0)">意见反馈</a></li>
 						<li><a _href="http://h-ui.duoshuo.com/admin/"
 							href="javascript:;">评论列表</a></li>
-						<li><a _href="feedback-list.html" href="javascript:void(0)">意见反馈</a></li>
+
 					</ul>
 				</dd>
 			</dl>

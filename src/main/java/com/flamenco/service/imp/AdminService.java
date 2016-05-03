@@ -28,7 +28,7 @@ public class AdminService extends BaseService implements IAdminService {
 	}
 	
 	@Override
-	public boolean checkAdmin(Admin admin) {
+	public int checkAdmin(Admin admin) {
 		return adminDao.checkAdmin(admin);
 	}
 	
@@ -43,6 +43,11 @@ public class AdminService extends BaseService implements IAdminService {
 
 	@Override
 	public boolean addAdivce(Advice advice) {
+		return false;
+	}
+
+	@Override
+	public boolean save(Object object) {
 		return false;
 	}
 }

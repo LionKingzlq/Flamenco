@@ -26,11 +26,26 @@ public class TeachRes {
 	@Column(name = "type")
 	private int type;
 
-	@Column(name = "startTime")
-	private Date startTime;
+	@Column(name = "addTime")
+	private Date addTime;
 
 	@Column(name = "groupId")
 	private int groupId;
+
+	@Column(name = "adminName")
+	private String adminName;
+
+	public String getAdminName() {
+		return adminName;
+	}
+
+	public void setAdminName(String adminName) {
+		this.adminName = adminName;
+	}
+
+	public String getAddTime() {
+		return FormatUtil.Date2String(addTime);
+	}
 
 	@Column(name = "difficulty")
 	private int difficulty;
@@ -63,12 +78,8 @@ public class TeachRes {
 		this.type = type;
 	}
 
-	public String getStarttime() {
-		return FormatUtil.Date2String(startTime);
-	}
-
-	public void setStartTime(Date startTime) {
-		this.startTime = startTime;
+	public void setAddTime(Date addTime) {
+		this.addTime = addTime;
 	}
 
 	public int getGroupId() {

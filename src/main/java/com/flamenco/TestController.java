@@ -21,8 +21,8 @@ public class TestController {
 	public JSONObject GetFavoriteList(Locale locale, Model model) {
 		System.out.println("Abraham Zhang");
 		Admin admin =  new Admin();
-		admin.setAdminId(2);
-		admin.setAdmin("abraham");
+		admin.setId(2);
+		admin.setName("abraham");
 		admin.setPassWord("password");
 		String object = "{'id':2,'name':'abraham','password':'pass'}";
 		JSONObject jsonObject = new JSONObject().fromObject(object);

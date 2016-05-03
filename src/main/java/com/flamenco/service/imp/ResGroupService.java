@@ -36,4 +36,10 @@ public class ResGroupService extends BaseService implements IResGroupService{
 		return resGroupDao.getAll();
 	}
 
+	@Override
+	public boolean save(Object object) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 }
